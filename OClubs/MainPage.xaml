@@ -1,0 +1,146 @@
+﻿<Page
+    x:Class="OClubs.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OClubs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Windows10version1903="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 8)"
+    xmlns:local1="using:OClubs.Components.Buttons"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d" Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <AcrylicBrush x:Key="BackgroundAcrylicBrush" BackgroundSource="HostBackdrop" TintColor="White" TintOpacity="0.2" FallbackColor="White"/>
+    </Page.Resources>
+
+
+    <Grid x:Name="DesignPage">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="BackgroundGrid" Background="{StaticResource BackgroundAcrylicBrush}" />
+        <Grid x:Name="Head" Grid.Row="0" Visibility="Collapsed">
+            <TextBlock x:Name="Logo" VerticalAlignment="Top" HorizontalAlignment="Left"
+                       Text="OClubs" FontSize="50" FontWeight="ExtraBold"
+                       Foreground="LightGreen" Margin="5" Scale="0,0,0">
+                <TextBlock.ScaleTransition>
+                    <Vector3Transition Duration="0:0:1.5"/>
+                </TextBlock.ScaleTransition>
+            </TextBlock>
+            <TextBlock x:Name="Intro" HorizontalAlignment="Center"
+                       Text="Explore and Research Projects" FontWeight="ExtraBold"
+                       Foreground="LightGreen" FontSize="50"
+                       Margin="5">
+                <TextBlock.TranslationTransition>
+                    <Vector3Transition Duration="0:0:1.5"/>
+                </TextBlock.TranslationTransition>
+            </TextBlock>
+        </Grid>
+        <Grid x:Name="Down" Grid.Row="1"
+              Background="LightGreen">
+            <StackPanel x:Name="LoginForm" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Width="600" CornerRadius="5">
+
+                <StackPanel.TranslationTransition>
+                    <Vector3Transition Duration="0:0:1.5"/>
+                </StackPanel.TranslationTransition>
+
+                <Pivot HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Foreground="#00cc6a" Background="#3a3a3b">
+                    <PivotItem Header="Sign-Up">
+                        <StackPanel>
+                            <StackPanel.ChildrenTransitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition IsStaggeringEnabled="True"
+                                                             FromVerticalOffset="550"
+                                                             FromHorizontalOffset="250"/>
+                                </TransitionCollection>
+                            </StackPanel.ChildrenTransitions>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="UserID" Header="User-ID" Margin="5"
+                                     Width="280" CornerRadius="5" Foreground="#00cc6a"/>
+                                <TextBox x:Name="Email" Header="Email" Margin="5"
+                                     Width="280" CornerRadius="5" Foreground="#00cc6a"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox x:Name="Password" Header="Password" Margin="5"
+                                     Width="280" CornerRadius="5"/>
+                                    <TextBox x:Name="ConfirmPassword" Header="ConfirmPassword" Margin="5"
+                                     Width="280" CornerRadius="5"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox x:Name="Address" Header="Address" Margin="5"
+                                     Width="280" CornerRadius="5"/>
+                                    <TextBox x:Name="Mobile" Header="Mobile" Margin="5"
+                                     Width="280" CornerRadius="5"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <ComboBox x:Name="Faculty" Header="Faculty" Margin="5"
+                                          Width="280" CornerRadius="5"
+                                          PlaceholderText="Select your Faculty">
+                                        <x:String>IT</x:String>
+                                        <x:String>BT</x:String>
+                                        <x:String>BA</x:String>
+                                        <x:String>ISE</x:String>
+                                        <x:String>BME</x:String>
+                                        <x:String>EE</x:String>
+                                    </ComboBox>
+                                    <TextBox x:Name="PhoneNumber" Header="Phone Number" Margin="5"
+                                     Width="280" CornerRadius="5"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <CalendarDatePicker x:Name="DateOfBirth" Header="DateOfBirth" Margin="5"
+                                     Width="280" CornerRadius="5"/>
+                                    <ComboBox x:Name="Gender" Header="Gender" Margin="5"
+                                     Width="280" CornerRadius="5">
+                                        <x:String>Male</x:String>
+                                        <x:String>Female</x:String>
+                                    </ComboBox>
+                                </StackPanel>
+                            </StackPanel>
+                            <Button x:Name="SignUp" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Width="150" Height="50" Margin="15" CornerRadius="5" Click="SignUp_Click"
+                                PointerEntered="SignUp_PointerEntered" PointerExited="SignUp_PointerExited"
+                                CenterPoint="75, 25, 0" Background="LightGreen">
+                                <Button.ScaleTransition>
+                                    <Vector3Transition Duration="0:0:0.5"/>
+                                </Button.ScaleTransition>
+                                Be a member
+                            </Button>
+                        </StackPanel>
+                    </PivotItem>
+                    <PivotItem Header="Log-in">
+                        <StackPanel>
+                            <TextBox x:Name="LogInUserId" CornerRadius="5" 
+                                 Header="User-Id" Width="280" Margin="5"/>
+                            <TextBox x:Name="LogInPassword" CornerRadius="5"
+                                 Header="Password" Width="280" Margin="5"/>
+                            <Button x:Name="LogIn" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Width="150" Height="50" Margin="15" CornerRadius="5" 
+                                PointerEntered="LogIn_PointerEntered" PointerExited="LogIn_PointerExited"
+                                CenterPoint="75, 25, 0" Background="LightGreen">
+                                <Button.ScaleTransition>
+                                    <Vector3Transition Duration="0:0:0.5"/>
+                                </Button.ScaleTransition>
+                                Log-In
+                            </Button>
+                        </StackPanel>
+                    </PivotItem>
+                </Pivot>
+            </StackPanel>
+            <HyperlinkButton x:Name="GuessEnter" Click="GuessEnter_Click"
+                             Content="Explore as guess" Margin="10" FontSize="25"
+                             VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+        </Grid>
+    </Grid>
+</Page>

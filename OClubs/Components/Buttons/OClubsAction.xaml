@@ -1,0 +1,35 @@
+﻿<UserControl
+    x:Class="OClubs.Components.Buttons.OClubsAction"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OClubs.Components.Buttons"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" x:Name="ActionButt"
+    d:DesignHeight="300"
+    d:DesignWidth="450">
+
+    <Button x:Name="ActionButton" Background="{Binding AColor, ElementName=ActionButt, Mode=OneTime}"
+                        Width="400" Height="200"
+                        PointerEntered="ActionButton_PointerEntered"
+                        PointerExited="ActionButton_PointerExited"
+                        CornerRadius="15" Margin="15">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock      x:Name="Icon"
+                            FontSize="70" Text="{Binding IconLogo, ElementName=ActionButt, Mode=OneTime}"
+                            FontFamily="{Binding AFontFamily, ElementName=ActionButt, Mode=OneTime}" 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Margin="5" Foreground="White" Translation="0, 0, 0">
+                <TextBlock.TranslationTransition>
+                    <Vector3Transition />
+                </TextBlock.TranslationTransition>
+            </TextBlock>
+            <TextBlock
+                            FontSize="30" FontWeight="Bold" Foreground="White"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Text="{Binding AName, ElementName=ActionButt, Mode=OneTime}" Margin="5"/>
+        </StackPanel>
+    </Button>
+</UserControl>

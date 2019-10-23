@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="OClubs.Views.IU.About_Tab.AboutParentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OClubs.Views.IU.About_Tab"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:lottieUwp="using:LottieUWP"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <Grid x:Name="HistorySection">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Width="600" Height="600" Margin="5"
+                       TextAlignment="Center"
+                       TextWrapping="WrapWholeWords"/>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="History" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Margin="5" FontSize="100" Foreground="#50d9ba"/>
+                <lottieUwp:LottieAnimationView
+                    FileName="Assets/LocalMedia/Lottie/History.json"
+                    AutoPlay="True" Margin="5" RepeatCount="-1"
+                    Width="600" Height="600"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="VisionSection">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Width="600" Height="600" Margin="5"
+                       TextAlignment="Center" Grid.Column="1"
+                       TextWrapping="WrapWholeWords"/>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Vision" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Margin="5" FontSize="100" Foreground="#4c5244"/>
+                <lottieUwp:LottieAnimationView
+                    FileName="Assets/LocalMedia/Lottie/EyeInfo.json"
+                    AutoPlay="True" Margin="5" RepeatCount="-1"
+                    Width="600" Height="600"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="PhilosophySection">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Width="600" Height="600" Margin="5"
+                       TextAlignment="Center"
+                       TextWrapping="WrapWholeWords"/>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Education" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Margin="5" FontSize="100" Foreground="#5ea3e2"/>
+                <lottieUwp:LottieAnimationView
+                    FileName="Assets/LocalMedia/Lottie/EducationGear.json"
+                    AutoPlay="True" Margin="5" RepeatCount="-1"
+                    Width="600" Height="600" RepeatMode="Reverse"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Page>
