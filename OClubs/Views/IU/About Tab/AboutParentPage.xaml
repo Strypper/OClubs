@@ -5,7 +5,8 @@
     xmlns:local="using:OClubs.Views.IU.About_Tab"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:lottieUwp="using:LottieUWP"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    xmlns:lottie="using:Microsoft.Toolkit.Uwp.UI.Lottie"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -21,12 +22,11 @@
             <StackPanel Grid.Column="1">
                 <TextBlock Text="History" VerticalAlignment="Center" HorizontalAlignment="Center"
                            Margin="5" FontSize="100" Foreground="#50d9ba"/>
-                <lottieUwp:LottieAnimationView
-                    FileName="Assets/LocalMedia/Lottie/History.json"
-                    AutoPlay="True" Margin="5" RepeatCount="-1"
-                    Width="600" Height="600"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"/>
+                <controls:AnimatedVisualPlayer x:Name="LottiePlayer1"
+                                       Width="400" Height="400">
+                    <lottie:LottieVisualSource x:Name="LottieJsonSource1" 
+                                       UriSource="ms-appx:///Assets/LocalMedia/Lottie/History.json"/>
+                </controls:AnimatedVisualPlayer>
             </StackPanel>
         </Grid>
         <Grid x:Name="VisionSection">
@@ -37,15 +37,14 @@
             <TextBlock Width="600" Height="600" Margin="5"
                        TextAlignment="Center" Grid.Column="1"
                        TextWrapping="WrapWholeWords"/>
-            <StackPanel Grid.Column="0">
+            <StackPanel Grid.Column="0" Background="Cyan" Height="600">
                 <TextBlock Text="Vision" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Margin="5" FontSize="100" Foreground="#4c5244"/>
-                <lottieUwp:LottieAnimationView
-                    FileName="Assets/LocalMedia/Lottie/EyeInfo.json"
-                    AutoPlay="True" Margin="5" RepeatCount="-1"
-                    Width="600" Height="600"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"/>
+                           Margin="5" FontSize="100" Foreground="#fefefe"/>
+                <controls:AnimatedVisualPlayer x:Name="LottiePlayer2"
+                                       Width="650" Height="650" Margin="0,-100,0,0">
+                    <lottie:LottieVisualSource x:Name="LottieJsonSource2"
+                                       UriSource="ms-appx:///Assets/LocalMedia/Lottie/SimpleEyes.json"/>
+                </controls:AnimatedVisualPlayer>
             </StackPanel>
         </Grid>
         <Grid x:Name="PhilosophySection">
@@ -59,12 +58,11 @@
             <StackPanel Grid.Column="1">
                 <TextBlock Text="Education" VerticalAlignment="Center" HorizontalAlignment="Center"
                            Margin="5" FontSize="100" Foreground="#5ea3e2"/>
-                <lottieUwp:LottieAnimationView
-                    FileName="Assets/LocalMedia/Lottie/EducationGear.json"
-                    AutoPlay="True" Margin="5" RepeatCount="-1"
-                    Width="600" Height="600" RepeatMode="Reverse"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"/>
+                <controls:AnimatedVisualPlayer x:Name="LottiePlayer3"
+                                       Width="400" Height="400">
+                    <lottie:LottieVisualSource x:Name="LottieJsonSource3" 
+                                       UriSource="ms-appx:///Assets/LocalMedia/Lottie/EducationGear.json"/>
+                </controls:AnimatedVisualPlayer>
             </StackPanel>
         </Grid>
     </StackPanel>

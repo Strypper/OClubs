@@ -11,7 +11,7 @@
     mc:Ignorable="d" Background="#212529">
 
     <StackPanel>
-        <GridView x:Name="Departments" Margin="5" HorizontalAlignment="Center"
+        <GridView x:Name="Departments" Margin="8,20,8,5" HorizontalAlignment="Center"
                   CanBeScrollAnchor="False">
             <GridView.ItemContainerTransitions>
                 <TransitionCollection>
