@@ -136,6 +136,10 @@
     <Compile Include="Components\ProgressBar\CircleProgressBar.xaml.cs">
       <DependentUpon>CircleProgressBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Animations\ColorBloomTransitionHelper.cs" />
+    <Compile Include="Helpers\ImageLoader\CircleSurface.cs" />
+    <Compile Include="Helpers\ImageLoader\ImageLoader.cs" />
+    <Compile Include="Helpers\ImageLoader\ManagedSurface.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -147,6 +151,9 @@
     </Compile>
     <Compile Include="Views\Clubs\OnlineClubs.xaml.cs">
       <DependentUpon>OnlineClubs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IU - Store\MainLayout\StoreView.xaml.cs">
+      <DependentUpon>StoreView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\IU\About Tab\AboutParentPage.xaml.cs">
       <DependentUpon>AboutParentPage.xaml</DependentUpon>
@@ -234,6 +241,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\IU - Store\MainLayout\StoreView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\IU\About Tab\AboutParentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -277,9 +288,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\LocalMedia\Images\Club\" />
+    <Folder Include="Assets\LocalMedia\TestingImages\" />
     <Folder Include="Components\Test\" />
     <Folder Include="Views\BlackBoard\" />
-    <Folder Include="Views\IU - Store\MainLayout\" />
     <Folder Include="Views\IU\IU-Clubs Tab\" />
     <Folder Include="Views\IU\News Tab\" />
     <Folder Include="Views\IU\QandA Tab\" />

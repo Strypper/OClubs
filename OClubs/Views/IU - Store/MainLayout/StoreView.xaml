@@ -1,0 +1,225 @@
+﻿<Page
+    x:Class="OClubs.Views.IU___Store.MainLayout.StoreView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OClubs.Views.IU___Store.MainLayout"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo />
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <!--<Grid x:Name="UICanvas">
+        <Rectangle x:Name="hostForVisual" />
+        <Rectangle x:Name="anotherHost" />
+        <Pivot Name="mainPivot"
+                   SelectionChanged="treePivot_SelectionChanged">
+            --><!-->Notice how every Pivot Item is transparent. They need to be "Filled" with colour<--><!--
+            <PivotItem Name="firstPivotItem"
+                           Background="Transparent"
+                           Foreground="Black">
+                <PivotItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xE117;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="Black"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock Text="Black Market" FontWeight="ExtraBold" Foreground="Black"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </PivotItem.Header>
+            </PivotItem>
+            <PivotItem Name="secondPivotItem"
+                           Background="Transparent">
+                <PivotItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xE719;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock Text="IU Market" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </PivotItem.Header>
+            </PivotItem>
+            <PivotItem Name="thirdPivotItem"
+                           Background="Transparent">
+                <PivotItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xEC32;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#ffb900"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock Text="Coffee Story" FontWeight="ExtraBold" Foreground="#ffb900"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </PivotItem.Header>
+            </PivotItem>
+        </Pivot>
+    </Grid>-->
+
+    <Grid Name="UICanvas"
+          Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          SizeChanged="UICanvas_SizeChanged">
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <!-->This Rectangle below is where the animation occurs from
+            You can place as many rectangles as you want here and they'll
+            all cover the display as long as you don't set any dimensions
+            I originally wanted the animation to start from the postion of the pivot item title selected
+            but I couldn't figure it out. It would be awesome if someone found a solution...<-->
+            <Rectangle x:Name="hostForVisual" />
+            <Rectangle x:Name="anotherHost" />
+            <!--<Rectangle x:Name="secondHost" 
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"/>
+            <Rectangle x:Name="thirdHost" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom"
+                       />
+            <Rectangle x:Name="fourthHost" 
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>-->
+            <Pivot Name="mainPivot"
+                   SelectionChanged="treePivot_SelectionChanged">
+                <!-->Notice how every Pivot Item is transparent. They need to be "Filled" with colour<-->
+                <PivotItem Name="firstPivotItem"
+                           Background="Transparent"
+                           Foreground="Black">
+                    <PivotItem.Header>
+                        <AppBarButton Name="firstPivot"
+                                      Style="{ThemeResource TextBlockButtonStyle}"
+                                      Foreground="Black"
+                                      Click="header_Click">
+                            <AppBarButton.Content>
+                                <TextBlock Text="first"
+                                           FontSize="20" />
+                            </AppBarButton.Content>
+                        </AppBarButton>
+                    </PivotItem.Header>
+                    <RelativePanel>
+
+                        <TextBlock Name="Welcome"
+                                   Text="Welcome Back!"
+                                   FontSize="20"
+                                   RelativePanel.AlignTopWithPanel="True"
+                                   RelativePanel.AlignHorizontalCenterWithPanel="True" />
+                        <!-->The Grid Below is what will be used to create the color bloom animation inside a button<-->
+                        <Grid Name="limitOfAnimation"
+                              Background="Transparent"
+                              RelativePanel.AlignHorizontalCenterWith="Welcome"
+                              RelativePanel.AlignVerticalCenterWithPanel="True"
+                              SizeChanged="limitOfAnimation_SizeChanged">
+                            <Rectangle Name="hostForButtonVisual" 
+                                       Fill="Transparent"/>
+                            <Button Name="colourBloomButton" 
+                                Background="Transparent"
+                                Click="colourBloomButton_Click">
+                                <Grid Name="colourBloomSpace"
+                                Background="Transparent">
+
+                                    <TextBlock Name="buttonHeader" 
+                                           Text="Bloom!!!"/>
+                                </Grid>
+                            </Button>
+                        </Grid>
+                    </RelativePanel>
+
+                </PivotItem>
+                <PivotItem Name="secondPivotItem"
+                           Background="Transparent">
+                    <PivotItem.Header>
+                        <AppBarButton Name="secondPivot"
+                                      Style="{ThemeResource TextBlockButtonStyle}"
+                                      Foreground="Black"
+                                      Click="header_Click">
+                            <AppBarButton.Content>
+                                <TextBlock Text="second" 
+                                           FontSize="20"/>
+                            </AppBarButton.Content>
+                        </AppBarButton>
+                    </PivotItem.Header>
+                    <Grid Name="moneyTreeSpace">
+
+                        <RelativePanel HorizontalAlignment="Stretch">
+
+                            <TextBlock Name="WoohooText"
+                                       Text="Woohoo!"
+                                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                       RelativePanel.AlignVerticalCenterWithPanel="True"></TextBlock>
+                            <Button Name="surroundBloomButton"
+                                    Content="Bloom Everywhere!"
+                                    RelativePanel.Below="WoohooText"
+                                    RelativePanel.AlignHorizontalCenterWith="WoohooText"
+                                    Click="surroundBloomButton_Click" />
+                            <TextBlock Name="topFlower"
+                                       Text="a"
+                                       RelativePanel.AlignTopWithPanel="True"
+                                       RelativePanel.AlignHorizontalCenterWithPanel="True" />
+
+                            <TextBlock Name="rightFlower" 
+                                       Text="a"
+                                       RelativePanel.AlignRightWithPanel="True"
+                                       RelativePanel.AlignVerticalCenterWithPanel="True" />
+                            <TextBlock Name="bottomFlower"
+                                       Text="a"
+                                       RelativePanel.AlignBottomWithPanel="True"
+                                       RelativePanel.AlignHorizontalCenterWithPanel="True" />
+                            <TextBlock Name="leftFlower"
+                                       Text="a"
+                                       RelativePanel.AlignLeftWithPanel="True"
+                                       RelativePanel.AlignVerticalCenterWithPanel="True" />
+
+                        </RelativePanel>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Name="thirdPivotItem"
+                           Background="Transparent">
+                    <PivotItem.Header>
+                        <AppBarButton Name="thirdPivot"
+                                      Style="{ThemeResource TextBlockButtonStyle}"
+                                      Foreground="Black"
+                                      Click="header_Click">
+                            <AppBarButton.Content>
+                                <TextBlock Text="third"
+                                           FontSize="20" />
+                            </AppBarButton.Content>
+                        </AppBarButton>
+                    </PivotItem.Header>
+                    <RelativePanel>
+
+                        <TextBlock Text="Yes!!!"
+                                       Foreground="Black"
+                                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
+
+                    </RelativePanel>
+                </PivotItem>
+            </Pivot>
+        </Grid>
+        <!-->I made the command bar, part of the grid so the animation can occur inside the command bar too. 
+        Pretty cool right?
+        The Colour for the background is pretty good for 
+        when you want to use to play around with transparency in your UI.
+        Feel free to use it in your own projects! 
+        <-->
+        <CommandBar Name="bottomBar"
+                    Grid.Row="1"
+                    Background="#19000000"
+                    Foreground="DarkBlue">
+            <AppBarButton Name="toNextPage"
+                          Click="toNextPage_Click"
+                          Foreground="DarkBlue"
+                          Icon="Up" />
+        </CommandBar>
+    </Grid>
+</Page>

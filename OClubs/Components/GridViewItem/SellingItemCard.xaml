@@ -9,7 +9,25 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid>
-
-    </Grid>
+    <StackPanel Background="LightCyan" Width="150" Height="150"
+                CornerRadius="5">
+        <Border x:Name="ImageWrapper" CornerRadius="5" Background="red"
+                Width="140" Height="70" Margin="5">
+            <Image x:Name="SellingItemImage" Width="140" Height="70">
+                <Image.Source>
+                    <BitmapImage DecodePixelHeight="70" DecodePixelWidth="140"/>
+                </Image.Source>
+            </Image>
+        </Border>
+        <TextBlock x:Name="ItemName" Margin="5" Text="Product Name"
+                   FontWeight="ExtraBlack"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <RelativePanel HorizontalAlignment="Stretch">
+            <PersonPicture x:Name="Avatar" Width="30" Height="30"/>
+            <TextBlock x:Name="UserName" Margin="5" Text="Name" 
+                       VerticalAlignment="Center" RelativePanel.AlignRightWith="Avatar"/>
+            <TextBlock  x:Name="Price" Text="100$" Margin="5" FontWeight="Bold"
+                        Foreground="Green" RelativePanel.AlignRightWithPanel="True"/>
+        </RelativePanel>
+    </StackPanel>
 </UserControl>

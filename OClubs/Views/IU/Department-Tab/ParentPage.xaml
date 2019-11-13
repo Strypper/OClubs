@@ -7,27 +7,24 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:UserControl="using:OClubs.Components.GridViewItem"
     xmlns:data1="using:OClubs.Models.LocalData"
-    xmlns:lottieUwp="using:LottieUWP"
     mc:Ignorable="d" Background="#212529">
 
-    <StackPanel>
-        <GridView x:Name="Departments" Margin="8,20,8,5" HorizontalAlignment="Center"
+    <GridView x:Name="Departments" Margin="8,20,8,5" HorizontalAlignment="Center"
                   CanBeScrollAnchor="False">
-            <GridView.ItemContainerTransitions>
-                <TransitionCollection>
-                    <EntranceThemeTransition IsStaggeringEnabled="True"
+        <GridView.ItemContainerTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition IsStaggeringEnabled="True"
                                              FromHorizontalOffset="0"
                                              FromVerticalOffset="250"/>
-                </TransitionCollection>
-            </GridView.ItemContainerTransitions>
-            <GridView.ItemTemplate>
-                <DataTemplate x:DataType="data1:Department">
-                    <UserControl:DepartmentItem Margin="5"
+            </TransitionCollection>
+        </GridView.ItemContainerTransitions>
+        <GridView.ItemTemplate>
+            <DataTemplate x:DataType="data1:Department">
+                <UserControl:DepartmentItem Margin="5"
                                                 DepartmentImageSource="{x:Bind ImgSource, Mode=OneTime}"
                                                 DepartmentTitle="{x:Bind Name, Mode=OneTime}"
                                                 DepartmentDescription="{x:Bind Detail, Mode=OneTime}"/>
-                </DataTemplate>
-            </GridView.ItemTemplate>
-        </GridView>
-    </StackPanel>
+            </DataTemplate>
+        </GridView.ItemTemplate>
+    </GridView>
 </Page>

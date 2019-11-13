@@ -1,6 +1,7 @@
 ﻿using OClubs.Views.Clubs;
 using OClubs.Views.IU;
 using OClubs.Views.IU.About_Tab;
+using OClubs.Views.IU___Store.MainLayout;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -54,6 +55,9 @@ namespace OClubs.Views
                     break;
                 case "IUServices":
                     TheMainFrame.Navigate(typeof(Home));
+                    break;
+                case "Shop":
+                    TheMainFrame.Navigate(typeof(StoreView));
                     break;
             }
         }
