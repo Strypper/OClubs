@@ -1,0 +1,164 @@
+﻿<Page
+    x:Class="OClubs.Views.IU___Store.MainLayout.StoreView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OClubs.Views.IU___Store.MainLayout"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<<<<<<< HEAD
+<<<<<<< HEAD
+    xmlns:UserControl="using:OClubs.Components.GridViewItem"
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+    mc:Ignorable="d" Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo />
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid Name="UICanvas"
+          Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          SizeChanged="UICanvas_SizeChanged">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Rectangle x:Name="hostForVisual" />
+            <Rectangle x:Name="anotherHost" />
+            <Pivot Name="mainPivot"
+                   SelectionChanged="treePivot_SelectionChanged">
+                <!-->Notice how every Pivot Item is transparent. They need to be "Filled" with colour<-->
+                <PivotItem Name="firstPivotItem"
+                           Background="Transparent"
+                           Foreground="Black">
+                    <PivotItem.Header>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        <StackPanel x:Name="firstPivot" Orientation="Horizontal">
+                            <TextBlock Text="&#xE117;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="Black"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                            FontSize="20"/>
+                            <TextBlock Text="Black Market" FontWeight="ExtraBold" Foreground="Black"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                            FontSize="20"/>
+                        </StackPanel>
+                    </PivotItem.Header>
+                    <!-->The Grid Below is what will be used to create the color bloom animation inside a button<-->
+                    <Grid Name="BlackMarket" Background="Transparent">
+                        <UserControl:SellingItemCard/>
+=======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+                        <AppBarButton Name="firstPivot"
+                                      Style="{ThemeResource TextBlockButtonStyle}"
+                                      Foreground="Black" Width="200"
+                                      Click="header_Click">
+                            <AppBarButton.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE117;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="Black"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Black Market" FontWeight="ExtraBold" Foreground="Black"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </AppBarButton.Content>
+                        </AppBarButton>
+                    </PivotItem.Header>
+                    <!-->The Grid Below is what will be used to create the color bloom animation inside a button<-->
+                    <Grid Name="BlackMarket" Background="Transparent">
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+                    </Grid>
+
+                </PivotItem>
+                <PivotItem Name="secondPivotItem"
+                           Background="Transparent">
+                    <PivotItem.Header>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        <StackPanel Name="secondPivot" Orientation="Horizontal">
+                            <TextBlock Text="&#xE719;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                            FontSize="20"/>
+                            <TextBlock Text="IU Market" FontWeight="ExtraBold" Foreground="#2e3191"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                            FontSize="20"/>
+                        </StackPanel>
+=======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+                        <AppBarButton Name="secondPivot"
+                                      Style="{ThemeResource TextBlockButtonStyle}"
+                                      Foreground="Black" Width="200"
+                                      Click="header_Click">
+                            <AppBarButton.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE719;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <TextBlock Text="IU Market" FontWeight="ExtraBold" Foreground="#2e3191"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </AppBarButton.Content>
+                        </AppBarButton>
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+                    </PivotItem.Header>
+                    <Grid Name="IUMarket">
+                    </Grid>
+                </PivotItem>
+                <PivotItem Name="thirdPivotItem"
+                           Background="Transparent">
+                    <PivotItem.Header>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        <StackPanel Name="thirdPivot" Orientation="Horizontal">
+                            <TextBlock Text="&#xEC32;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#ffb900"
+                                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                               FontSize="25"/>
+                            <TextBlock Text="Coffee Story" FontWeight="ExtraBold" Foreground="#ffb900"
+                                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               FontSize="20"/>
+                        </StackPanel>
+=======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+                        <AppBarButton Name="thirdPivot"
+                                      Style="{ThemeResource TextBlockButtonStyle}"
+                                      Foreground="Black" Width="200"
+                                      Click="header_Click">
+                            <AppBarButton.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xEC32;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#ffb900"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Coffee Story" FontWeight="ExtraBold" Foreground="#ffb900"
+                                            Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </AppBarButton.Content>
+                        </AppBarButton>
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+                    </PivotItem.Header>
+                    <Grid>
+                        
+                    </Grid>
+                </PivotItem>
+            </Pivot>
+        </Grid>
+    </Grid>
+</Page>

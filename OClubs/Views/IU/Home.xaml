@@ -1,0 +1,193 @@
+﻿<Page
+    x:Class="OClubs.Views.IU.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OClubs.Views.IU"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UserControl="using:OClubs.Components.GridViewItem"
+    xmlns:data1="using:OClubs.Models.LocalData"
+    mc:Ignorable="d"
+    Background="LightGray">
+
+    <ScrollViewer x:Name="MainScrollView">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="700"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <ParallaxView Source="{Binding ElementName=MainScrollView}"
+                              VerticalShift="-900">
+                    <!--<MediaElement x:Name="BackgroundVideo" IsFullWindow="False"
+                              Source="ms-appx:///Assets/LocalMedia/Videos/IUTrailer.mp4"
+                              Stretch="UniformToFill" AutoPlay="True" IsMuted="True"/>-->
+
+                    <FlipView x:Name="IUSlider">
+                        <Image Source="/Assets/FlipView/FlipView1.jpg" Stretch="UniformToFill" />
+                        <Image Source="/Assets/FlipView/FlipView2.jpg" Stretch="UniformToFill"  />
+                        <Image Source="/Assets/FlipView/FlipView3.jpg" Stretch="UniformToFill"  />
+                        <Image Source="/Assets/FlipView/FlipView4.jpg" Stretch="UniformToFill"  />
+                        <Image Source="/Assets/FlipView/FlipView5.jpg" Stretch="UniformToFill"  />
+                    </FlipView>
+                </ParallaxView>
+                <TextBlock Text="Proud to be an IUer" FontSize="50" Foreground="#2e3191" FontWeight="Bold"
+                           VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="700,5,5,5"/>
+            </Grid>
+            <Grid Grid.Row="1" Margin="5">
+                <ToggleButton x:Name="Sound" Checked="Sound_Checked" Unchecked="Sound_Unchecked"
+                              Width="200" Height="200" Background="Transparent"  
+                              VerticalAlignment="Top" HorizontalAlignment="Center"
+                              Margin="0,-100,0,0" CornerRadius="100">
+                    <Image Width="190" Height="190" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Source="ms-appx:///Assets/LocalMedia/Images/Logos/IU-Logo.png"/>
+                </ToggleButton>
+                <TextBlock Text="Join us" FontSize="50" Foreground="#2e3191" FontWeight="Bold"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5,5,400,5"/>
+
+                
+                
+               
+
+                <Pivot x:Name="HomePivot" SelectionChanged="HomePivot_SelectionChanged" Margin="0,100,0,0">
+                    <Pivot.RightHeader>
+                        <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
+                            <AppBarButton Icon="Map" Label="Locations" FontWeight="ExtraBold" Foreground="#2e3191"/>
+                            <AppBarButton Icon="Mail" Label="Mail" FontWeight="ExtraBold" Foreground="#2e3191"/>
+                            <AppBarButton Icon="Phone" Label="Contact" FontWeight="ExtraBold" Foreground="#2e3191"/>
+                        </CommandBar>
+                    </Pivot.RightHeader>
+                    <PivotItem x:Name="DepartmentTab" Tag="AboutTab">
+                        <PivotItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xECAA;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock Text="Departments" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </PivotItem.Header>
+                        <Frame x:Name="DepartmentFrame" HorizontalAlignment="Stretch">
+                            <Frame.ContentTransitions>
+                                <TransitionCollection>
+                                    <NavigationThemeTransition/>
+                                </TransitionCollection>
+                            </Frame.ContentTransitions>
+                        </Frame>
+                    </PivotItem>
+                    <PivotItem x:Name="AboutTab" Tag="AboutTab">
+                        <PivotItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE783;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock Text="About" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </PivotItem.Header>
+                        <Frame x:Name="AboutFrame" HorizontalAlignment="Stretch">
+                            <Frame.ContentTransitions>
+                                <TransitionCollection>
+                                    <NavigationThemeTransition/>
+                                </TransitionCollection>
+                            </Frame.ContentTransitions>
+                        </Frame>
+                    </PivotItem>
+                    <PivotItem x:Name="IUClubsTab">
+                        <PivotItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE7C1;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock Text="IU-Clubs" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </PivotItem.Header>
+                        <Frame x:Name="IUClubsFrame">
+                            <Frame.ContentTransitions>
+                                <TransitionCollection>
+                                    <NavigationThemeTransition/>
+                                </TransitionCollection>
+                            </Frame.ContentTransitions>
+                        </Frame>
+                    </PivotItem>
+                    <PivotItem x:Name="NewsTab">
+                        <PivotItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE8A1;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191" 
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock Text="News" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </PivotItem.Header>
+                        <Frame x:Name="IUNewsFrame" x:Load="False">
+                            <Frame.ContentTransitions>
+                                <TransitionCollection>
+                                    <NavigationThemeTransition/>
+                                </TransitionCollection>
+                            </Frame.ContentTransitions>
+                        </Frame>
+                    </PivotItem>
+                    <PivotItem x:Name="QnATab">
+                        <PivotItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE9CE;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock Text="Q &amp; A" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </PivotItem.Header>
+                        <Frame x:Name="QNAFrame" x:Load="False">
+                            <Frame.ContentTransitions>
+                                <TransitionCollection>
+                                    <NavigationThemeTransition/>
+                                </TransitionCollection>
+                            </Frame.ContentTransitions>
+                        </Frame>
+                    </PivotItem>
+                    <PivotItem x:Name="PrinciplesTab">
+                        <PivotItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE716;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191" 
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock Text="Principles" FontWeight="ExtraBold" Foreground="#2e3191"
+                               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </PivotItem.Header>
+                        <Frame x:Name="TeachersFrame" x:Load="False">
+                            <Frame.ContentTransitions>
+                                <TransitionCollection>
+                                    <NavigationThemeTransition/>
+                                </TransitionCollection>
+                            </Frame.ContentTransitions>
+                        </Frame>
+                    </PivotItem>
+                </Pivot>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom" 
+                        Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="StaffEmail" Content="Staff Email" Background="#8a9045"
+                        Height="100" Grid.Column="0" HorizontalAlignment="Stretch"></Button>
+                <Button x:Name="StudentEmail" Content="Student Email" Background="#a88b60"
+                        Height="100" Grid.Column="1" HorizontalAlignment="Stretch"></Button>
+                <Button x:Name="BlackBoard" Content="BlackBoard" Background="#8f3931"
+                        Height="100" Grid.Column="2" HorizontalAlignment="Stretch"></Button>
+                <Button x:Name="EdusoftWeb" Content="EdusoftWeb" Background="#c16622"
+                        Height="100" Grid.Column="3" HorizontalAlignment="Stretch"></Button>
+                <Button x:Name="EdusoftMaster" Content="EdusoftMaster" Background="#3e769a"
+                        Height="100" Grid.Column="4" HorizontalAlignment="Stretch"></Button>
+                <Button x:Name="Library" Content="Library" Background="#890b50"
+                        Height="100" Grid.Column="5" HorizontalAlignment="Stretch"></Button>
+                <Button x:Name="OGA" Content="Office Of Gradute" Background="#c9bb06"
+                        Height="100" Grid.Column="6" HorizontalAlignment="Stretch"></Button>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Page>

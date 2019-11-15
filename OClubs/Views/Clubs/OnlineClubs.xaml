@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="OClubs.Views.Clubs.OnlineClubs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OClubs.Views.Clubs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UserControl="using:OClubs.Components.GridViewItem"
+    xmlns:data="using:OClubs.Models.Club"
+    xmlns:local1="using:OClubs.Components.Buttons"
+    mc:Ignorable="d"
+    Background="#fffdfd">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Hidden" Grid.Row="0">
+            <StackPanel x:Name="Head" Orientation="Horizontal">
+                <local1:OClubsAction IconLogo="&#xE81B;" AColor="#7134bf"
+                                     AName="CREATE YOUR OWN CLUB" AFontFamily="Segoe MDL2 Assets"/>
+                <local1:OClubsAction IconLogo="&#xE716;" AColor="#ffa40b"
+                                     AName="FIND YOUR PARTNERS" AFontFamily="Segoe MDL2 Assets"/>
+                <local1:OClubsAction IconLogo="&#xEBD2;" AColor="#edabc7"
+                                     AName="BROWSE PROJECTS" AFontFamily="Segoe MDL2 Assets"/>
+                <local1:OClubsAction IconLogo="&#x1F3C1;" AColor="#00d2d6"
+                                     AName="COMPETITIONS" AFontFamily="Segoe UI Symbol"/>
+                <local1:OClubsAction IconLogo="&#x1F378;" AColor="#ffecc4"
+                                     AName="EVENTS" AFontFamily="Segoe UI Symbol"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <GridView x:Name="OClubs" Grid.Column="0" IsItemClickEnabled="True"
+                      ItemClick="OClubs_ItemClick">
+                <GridView.Header>
+                    <Grid>
+                        <TextBlock Text="CLUBS" VerticalAlignment="Center" HorizontalAlignment="Left"
+                               FontSize="50" FontWeight="ExtraBlack" Foreground="Black" Margin="15"/>
+                        <StackPanel Orientation="Horizontal" Margin="5"
+                                    VerticalAlignment="Center" HorizontalAlignment="Right">
+                            <TextBlock Text="&#xE707;" FontFamily="Segoe MDL2 Assets"
+                                       Margin="5" FontSize="30"/>
+                            <ComboBox x:Name="Location" CornerRadius="5" Margin="5"
+                                      Width="300" PlaceholderText="Location"/>
+                            <TextBlock Text="&#xE154;" FontFamily="Segoe MDL2 Assets"
+                                       Margin="5" FontSize="30"/>
+                            <ComboBox x:Name="Categories" CornerRadius="5" Margin="5"
+                                      Width="300" PlaceholderText="Categories"/>
+                        </StackPanel>
+                    </Grid>
+                </GridView.Header>
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="data:ClubDataConcept">
+                        <UserControl:ClubItem Margin="5"/>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+            <ListView x:Name="Events" Grid.Column="1">
+                <ListView.Header>
+                    <Grid>
+                        <TextBlock Text="EVENTS" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                   Margin="15" FontWeight="ExtraBlack" FontSize="50"/>
+                        <TextBlock FontSize="30" FontFamily="Segoe UI Symbol" Text="&#x1F378;"
+                            VerticalAlignment="Center" HorizontalAlignment="Right"
+                            Margin="5"/>
+                    </Grid>
+                </ListView.Header>
+            </ListView>
+        </Grid>
+        
+    </Grid>
+</Page>

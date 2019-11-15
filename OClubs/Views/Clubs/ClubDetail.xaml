@@ -1,0 +1,283 @@
+﻿<Page
+    x:Class="OClubs.Views.Clubs.ClubDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OClubs.Views.Clubs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:local1="using:OClubs.Components.ProgressBar"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    xmlns:media="using:Microsoft.Toolkit.Uwp.UI.Media"
+    mc:Ignorable="d" Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <LinearGradientBrush x:Key="DefaultColor" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FDC830" Offset="0.0" />
+            <GradientStop Color="#F37335" Offset="0.7" />
+        </LinearGradientBrush>
+    </Page.Resources>
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <local1:CircleProgressBar Margin="30"/>
+                    <local1:CircleProgressBar Margin="30"/>
+                    <local1:CircleProgressBar Margin="30"/>
+                </StackPanel>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{StaticResource DefaultColor}"
+                       Width="600" Height="300" Margin="30" Text="KEEP STRIVING FALL DOWN 7 GET UP 8"
+                           FontSize="70" FontWeight="ExtraBold" TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="550"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <RelativePanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="35,-100,5,5">
+                    <PersonPicture x:Name="ClubLogo"
+                           Width="200" Height="200"/>
+                    <TextBlock x:Name="ClubName" Text="VISION" FontSize="80" Foreground="{StaticResource DefaultColor}"
+                           RelativePanel.RightOf="ClubLogo" FontWeight="ExtraBold">
+                    </TextBlock>
+                    <StackPanel x:Name="ClubStatus" Width="270" Height="80" Margin="5" Orientation="Horizontal"
+                           RelativePanel.Below="ClubName" RelativePanel.RightOf="ClubLogo">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE707;" Foreground="{StaticResource DefaultColor}"/>
+                        <TextBlock Text="Online" VerticalAlignment="Center" Foreground="{StaticResource DefaultColor}"
+                                   Margin="5,0,0,0"/>
+
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE2AD;" Foreground="{StaticResource DefaultColor}"
+                                  Margin="15,0,0,0"/>
+                        <TextBlock Text="10AM - 16PM" VerticalAlignment="Center" Foreground="{StaticResource DefaultColor}"
+                                   Margin="5,0,0,0"/>
+
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE125;" Foreground="{StaticResource DefaultColor}"
+                                  Margin="15,0,0,0"/>
+                        <TextBlock Text="35" VerticalAlignment="Center" Foreground="{StaticResource DefaultColor}"
+                                   Margin="5,0,0,0"/>
+                    </StackPanel>
+                </RelativePanel>
+                <RelativePanel VerticalAlignment="Top" HorizontalAlignment="Left"
+                           Grid.Column="1">
+                    <Border x:Name="First" Margin="5" CornerRadius="15"
+                        Width="400" Height="500" Background="#fafafa">
+                        <!--<Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#FDFC47" Offset="0.0" />
+                                <GradientStop Color="#24FE41" Offset="0.9" />
+                            </LinearGradientBrush>
+                        </Border.Background>-->
+                        <Grid>
+                            <controls:RadialProgressBar x:Name="NumberOfProjects"
+                                                        VerticalAlignment="Center"
+                                                        HorizontalAlignment="Center"
+                                                        Width="370" Height="370"
+                                                        Thickness="10" Value="3"
+                                                        Maximum="5" Minimum="0"
+                                                        Foreground="{StaticResource DefaultColor}">
+                            </controls:RadialProgressBar>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="&#xEBD2;" FontFamily="Segoe MDL2 Assets" FontSize="150" Margin="5"
+                                   VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource DefaultColor}">
+                                </TextBlock>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           FontSize="20" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}">
+                                    <Run Text="3"/>
+                                    <Run Text="PROJECTS HAVE FINISH"/>
+                                </TextBlock>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           FontSize="20" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}">
+                                    <Run Text="5"/>
+                                    <Run Text="TOTAL"/>
+                                </TextBlock>
+                            </StackPanel>
+                            
+                        </Grid>
+                    </Border>
+                    <Grid x:Name="Second" Margin="25,45,25,5"
+                        RelativePanel.RightOf="First" Background="#fafafa"
+                        Width="250" Height="200" CornerRadius="15">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           FontSize="50" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}">
+                                    <Run Text="&#xE006;" FontFamily="Segoe MDL2 Assets"/>
+                                    <Run Text="50K"/>
+                                </TextBlock>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           Text="LOVE" FontSize="30" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"/>
+                            </StackPanel>
+                        </Grid>
+                    <Grid x:Name="Third" Margin="25,45,25,5"
+                        RelativePanel.RightOf="First"
+                        RelativePanel.Below="Second" Background="#fafafa"
+                        Width="250" Height="200" CornerRadius="15">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           FontSize="50" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}">
+                                    <Run Text="&#xEF90;" FontFamily="Segoe MDL2 Assets"/>
+                                    <Run Text="20K"/>
+                                </TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource DefaultColor}"
+                                           Text="FOLLOWING" FontSize="30" FontWeight="ExtraBold"/>
+                            </StackPanel>
+                    </Grid>
+                    <Grid x:Name="Fourth" Margin="25,45,25,5"
+                        RelativePanel.RightOf="Second" Background="#fafafa"
+                        Width="250" Height="200" CornerRadius="15">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           FontSize="50" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}">
+                                <Run Text="&#xE170;" FontFamily="Segoe MDL2 Assets"/>
+                                <Run Text="20"/>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource DefaultColor}"
+                                           Text="JOIN REQUESTS" FontSize="25" FontWeight="ExtraBold"/>
+                            </StackPanel>
+                    </Grid>
+                    <Grid x:Name="Firth" Margin="25,45,25,5"
+                        RelativePanel.RightOf="Second"
+                        RelativePanel.Below="Fourth" Background="#fafafa"
+                        Width="250" Height="200" CornerRadius="15">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       FontSize="50" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}">
+                                <Run Text="&#xEA80;" FontFamily="Segoe MDL2 Assets"/>
+                                <Run Text="7"/>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource DefaultColor}"
+                                           Text="PENDING IDEAS" FontSize="25" FontWeight="ExtraBold"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid x:Name="Sixth" Margin="25,45,25,5"
+                        RelativePanel.RightOf="Fourth" Background="#fafafa"
+                        Width="250" Height="200" CornerRadius="15">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       FontSize="50" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}">
+                                <Run Text="&#xE7BA;" FontFamily="Segoe MDL2 Assets"/>
+                                <Run Text="20"/>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           Text="ISSUES" FontSize="20" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="Seventh" Margin="25,45,25,5"
+                        RelativePanel.RightOf="Firth"
+                        RelativePanel.Below="Sixth" Background="#fafafa"
+                        Width="250" Height="200" CornerRadius="15">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       FontSize="30" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}">
+                                <Run Text="&#x1F4B2;" FontFamily="Segoe UI Symbol"/>
+                                <Run Text="5,000,000"/>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           Text="FUND" FontSize="25" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"/>
+                        </StackPanel>
+                    </Grid>
+                    
+                    <Charting:Chart x:Name="LineChart" Margin="5"
+                                    RelativePanel.Below="First"
+                                    Width="1300" Height="700">
+                        <Charting:LineSeries Title="Club Activities" Margin="0" 
+                                             IndependentValuePath="Name" DependentValuePath="Amount" 
+                                             IsSelectionEnabled="True">
+                            <!--<Charting:LineSeries.DataPointStyle>
+                                <Style TargetType="Charting:LineDataPoint">
+                                    <Setter Property="Width" Value="10" />
+                                    <Setter Property="Height" Value="10" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Charting:LineDataPoint">
+                                                <Ellipse Fill="Green" Stroke="Green" StrokeThickness="3" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Charting:LineSeries.DataPointStyle>-->
+                            
+                        </Charting:LineSeries>
+
+                        <Charting:LineSeries Title="Club Activities1" Margin="0" 
+                                             IndependentValuePath="Name" DependentValuePath="Amount" 
+                                             IsSelectionEnabled="True"/>
+                    </Charting:Chart>
+                    
+                    
+
+                </RelativePanel>
+                <RelativePanel x:Name="ActionField" HorizontalAlignment="Left" VerticalAlignment="Top"
+                           Margin="15,120,0,0" Grid.Column="0">
+                    <Button x:Name="CreateProject" Width="250" Height="100" 
+                            Margin="5" CornerRadius="5" Background="#fafafa">
+                        <StackPanel>
+                            <TextBlock Text="&#xE179;" FontFamily="Segoe MDL2 Assets" FontSize="40" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                       Foreground="{StaticResource DefaultColor}">
+                            </TextBlock>
+                            <TextBlock Text="TO DO" FontWeight="ExtraBold" 
+                                       Foreground="{StaticResource DefaultColor}">
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="CreateAnnouncement" Width="250" Height="100" 
+                        Margin="5" CornerRadius="5" Background="#fafafa"
+                        RelativePanel.RightOf="CreateProject">
+                        <StackPanel>
+                            <TextBlock Text="&#xE789;" FontFamily="Segoe MDL2 Assets" FontSize="40" 
+                                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Foreground="{StaticResource DefaultColor}"/>
+                            <TextBlock Text="CREATE ANNOUNCEMENT" FontWeight="ExtraBold"
+                                       Foreground="{StaticResource DefaultColor}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="CreateTeam" Width="250" Height="100" Margin="5" CornerRadius="5"
+                        RelativePanel.Below="CreateProject" Background="#fafafa">
+                        <StackPanel>
+                            <TextBlock Text="&#xEB91;" FontFamily="Segoe MDL2 Assets" FontSize="40" 
+                                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Foreground="{StaticResource DefaultColor}"/>
+                            <TextBlock Text="TIMELINE" FontWeight="ExtraBold"
+                                       Foreground="{StaticResource DefaultColor}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Width="250" Height="100" Margin="5" CornerRadius="5"
+                            Background="#fafafa"
+                        RelativePanel.Below="CreateAnnouncement"
+                        RelativePanel.RightOf="CreateTeam">
+                        <StackPanel>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xED28;" FontSize="40"
+                                  VerticalAlignment="Center" HorizontalAlignment="Center"
+                                      Foreground="{StaticResource DefaultColor}"/>
+                            <TextBlock Text="CLUB SCHEDULE" FontWeight="ExtraBold"
+                                       Foreground="{StaticResource DefaultColor}"/>
+                        </StackPanel>
+                    </Button>
+                    <ListView x:Name="Team" RelativePanel.Below="CreateTeam">
+                        <ListView.Header>
+                            <Grid Width="510">
+                                <TextBlock Text="Teams" FontSize="30" Margin="5" FontWeight="ExtraBold"
+                                           VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right"
+                                            Orientation="Horizontal">
+                                    <Button Content="&#xE109;" FontFamily="Segoe MDL2 Assets" FontSize="35"
+                                            Background="Transparent" Margin="5" Width="60" Height="50"
+                                            CornerRadius="5"/>
+                                    <TextBlock Text="3" FontSize="30" Margin="5" 
+                                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE716;" FontSize="30"/>
+                                </StackPanel>
+                            </Grid>
+                        </ListView.Header>
+                    </ListView>
+                </RelativePanel>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Page>

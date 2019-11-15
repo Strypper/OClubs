@@ -1,0 +1,71 @@
+﻿<UserControl
+    x:Class="OClubs.Components.GridViewItem.SellingItemCard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OClubs.Components.GridViewItem"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <StackPanel Background="LightCyan" Width="300" Height="300"
+                CornerRadius="5">
+        <Border x:Name="ImageWrapper" CornerRadius="5" Background="red"
+                Width="290" Height="150" Margin="5">
+            <Image x:Name="SellingItemImage" Width="290" Height="150">
+                <Image.Source>
+                    <BitmapImage DecodePixelHeight="290" DecodePixelWidth="150"/>
+=======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+    <StackPanel Background="LightCyan" Width="150" Height="150"
+                CornerRadius="5">
+        <Border x:Name="ImageWrapper" CornerRadius="5" Background="red"
+                Width="140" Height="70" Margin="5">
+            <Image x:Name="SellingItemImage" Width="140" Height="70">
+                <Image.Source>
+                    <BitmapImage DecodePixelHeight="70" DecodePixelWidth="140"/>
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+                </Image.Source>
+            </Image>
+        </Border>
+        <TextBlock x:Name="ItemName" Margin="5" Text="Product Name"
+<<<<<<< HEAD
+<<<<<<< HEAD
+                   FontWeight="ExtraBlack" FontSize="30"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <RelativePanel HorizontalAlignment="Stretch">
+            <PersonPicture x:Name="Avatar" Width="60" Height="60"
+                           Margin="5"/>
+            <TextBlock x:Name="UserName" Margin="5" Text="Name" 
+                       RelativePanel.RightOf="Avatar"/>
+            <TextBlock x:Name="IUID" Margin="5" Text="ID"
+                       RelativePanel.Below="UserName"
+                       RelativePanel.RightOf="Avatar"/>
+            <TextBlock  x:Name="Price" Text="100$" Margin="5" FontWeight="Bold"
+                        Foreground="LightGreen" RelativePanel.AlignRightWithPanel="True"
+                        FontSize="50"/>
+=======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+                   FontWeight="ExtraBlack"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <RelativePanel HorizontalAlignment="Stretch">
+            <PersonPicture x:Name="Avatar" Width="30" Height="30"/>
+            <TextBlock x:Name="UserName" Margin="5" Text="Name" 
+                       VerticalAlignment="Center" RelativePanel.AlignRightWith="Avatar"/>
+            <TextBlock  x:Name="Price" Text="100$" Margin="5" FontWeight="Bold"
+                        Foreground="Green" RelativePanel.AlignRightWithPanel="True"/>
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+        </RelativePanel>
+    </StackPanel>
+</UserControl>
