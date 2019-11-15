@@ -69,11 +69,8 @@ namespace OClubs.Views.IU___Store.MainLayout
             //this also helps combat the bug that occurs when navigated to this page
             if (carefulPlz == true)
             {
-
                 this.InitializeTransitionHelper();
                 this.Unloaded += ColorBloomTransition_Unloaded;
-
-
             }
 
 
@@ -87,9 +84,9 @@ namespace OClubs.Views.IU___Store.MainLayout
         private void InitializeColors()
         {
             _colorsByPivotItem = new PropertySet();
-            _colorsByPivotItem.Add("firstPivot", Windows.UI.Colors.White);
-            _colorsByPivotItem.Add("secondPivot", Windows.UI.Colors.LightBlue);
-            _colorsByPivotItem.Add("thirdPivot", Windows.UI.Colors.SkyBlue);
+            _colorsByPivotItem.Add("firstPivot", Windows.UI.Color.FromArgb( 200, 137, 137, 137));
+            _colorsByPivotItem.Add("secondPivot", Windows.UI.Color.FromArgb( 200, 46, 49, 145));
+            _colorsByPivotItem.Add("thirdPivot", Windows.UI.Color.FromArgb( 150, 255, 185, 0));
 
         }
 
@@ -102,12 +99,11 @@ namespace OClubs.Views.IU___Store.MainLayout
         {
             // we pass in the UIElement that will host our Visuals
             transition = new ColorBloomTransitionHelper(hostForVisual);
-            buttonTransition = new ColorBloomTransitionHelper(hostForButtonVisual);
+            //buttonTransition = new ColorBloomTransitionHelper(hostForButtonVisual);
             surroundButtonTransition = new ColorBloomTransitionHelper(anotherHost);
 
             // when the transition completes, we need to know so we can update other property values
             transition.ColorBloomTransitionCompleted += ColorBloomTransitionCompleted;
-            buttonTransition.ColorBloomTransitionCompleted += buttonColorBloomTransitionCompleted;
             surroundButtonTransition.ColorBloomTransitionCompleted += SurroundButtonTransition_ColorBloomTransitionCompleted;
         }
 
@@ -229,156 +225,33 @@ namespace OClubs.Views.IU___Store.MainLayout
 
         }
 
-        private void colourBloomButton_Click(object sender, RoutedEventArgs e)
-        {
-            //This is what casues the animation to occur in the button
+        //private void limitOfAnimation_SizeChanged(object sender, SizeChangedEventArgs e)
+        //{
+        //    //This method is extremly vital. This creates the clipping which stops the 
+        //    //animation from occuring outside of the button.
+        //    var colourBloomCanvasLocation = limitOfAnimation.TransformToVisual(limitOfAnimation).TransformPoint(new Windows.Foundation.Point(0d, 0d));
 
-            var header = buttonHeader;
-            var headerPosition = buttonHeader.TransformToVisual(limitOfAnimation).TransformPoint(new Windows.Foundation.Point(0d, 0d));
+        //    var clip = new RectangleGeometry()
 
-            //var header = sender as Button;
+        //    {
 
-            //var headerPosition = header.TransformToVisual(colourBloomSpace).TransformPoint(new Windows.Foundation.Point(0d, 0d));
+        //        Rect = new Windows.Foundation.Rect(colourBloomCanvasLocation, e.NewSize)
 
-            //Uses values of the rectangle size as the size of the "header" (Initially
-            //I wanted it to use the pivot's size but I couldn't get it to work). 
-            //Would be awesome if someonebody found a way to make it work..
+        //    };
 
+        //    limitOfAnimation.Clip = clip;
+        //    //Note: This line isn't really needed as the button never resizes 
+        //    //in this app but it may come in handy later...
 
-            var initialBounds = new Windows.Foundation.Rect()
-            {
-                Width = header.RenderSize.Width,
-                Height = header.RenderSize.Height,
-                X = headerPosition.X,
-                Y = headerPosition.Y
-            };
-
-            var finalPosition = limitOfAnimation.TransformToVisual(limitOfAnimation).TransformPoint(new Windows.Foundation.Point(0d, 0d));
-            var finalBounds = new Rect(finalPosition, limitOfAnimation.RenderSize); // maps to the bounds of the current window
-            //The code is super easy to understand if you set a break point here and 
-            //check to see what happens step by step ;)
-            buttonTransition.Start((Windows.UI.Color.FromArgb(255, 255, 0, 0)),  // the color for the circlular bloom
-                                 initialBounds,                                  // the initial size and position
-                                       finalBounds);                             // the area to fill over the animation duration
-
-            // Add item to queue of transitions
-
-        }
-
-        private void limitOfAnimation_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            //This method is extremly vital. This creates the clipping which stops the 
-            //animation from occuring outside of the button.
-            var colourBloomCanvasLocation = limitOfAnimation.TransformToVisual(limitOfAnimation).TransformPoint(new Windows.Foundation.Point(0d, 0d));
-
-            var clip = new RectangleGeometry()
-
-            {
-
-                Rect = new Windows.Foundation.Rect(colourBloomCanvasLocation, e.NewSize)
-
-            };
-
-            limitOfAnimation.Clip = clip;
-            //Note: This line isn't really needed as the button never resizes 
-            //in this app but it may come in handy later...
-
-            //Line underneath reinitialises the transition helpers 
-            //because the area that the animation will occur
-            //and the area that the animation will be drawn (e.g host for visual)
-            //has changed.
-            //This way, no matter what the size of the window is
-            //The animation fills the Grid
-            //at the same speed even after you resize the window
-            InitializeTransitionHelper();
-        }
-
-        //Applies color to the button after the animation has finished.
-        private void buttonColorBloomTransitionCompleted(object sender, EventArgs e)
-        {
-            colourBloomButton.Background = new SolidColorBrush(Windows.UI.Colors.Red);
-        }
-
-        private void surroundBloomButton_Click(object sender, RoutedEventArgs e)
-        {
-            //Where the multiple colorBloom effect is activated
-
-            //all of these headers are actually textblocks I've placed on the sides of the grid.
-            var header = topFlower;
-
-            var headerPosition = topFlower.TransformToVisual(UICanvas).TransformPoint(new Windows.Foundation.Point(0d, 0d));
-
-            var header2 = rightFlower;
-
-            var header2Position = rightFlower.TransformToVisual(UICanvas).TransformPoint(new Windows.Foundation.Point(0d, 0d));
-
-            var header3 = bottomFlower;
-
-            var header3Position = bottomFlower.TransformToVisual(UICanvas).TransformPoint(new Windows.Foundation.Point(0d, 0d));
-
-            var header4 = leftFlower;
-
-            var header4Position = leftFlower.TransformToVisual(UICanvas).TransformPoint(new Windows.Foundation.Point(0d, 0d));
-
-
-
-
-            //Uses values of the textBlock size
-
-
-            var initialBounds = new Windows.Foundation.Rect()
-            {
-                Width = header.RenderSize.Width,
-                Height = header.RenderSize.Height,
-                X = headerPosition.X,
-                Y = headerPosition.Y
-            };
-
-            var finalBounds = Window.Current.Bounds; // maps to the bounds of the current window
-            //The code is super easy to understand if you set a break point here and 
-            //check to see what happens step by step ;)
-            surroundButtonTransition.Start((Windows.UI.Color.FromArgb(255, 255, 0, 0)),  // the color for the circlular bloom
-                                 initialBounds,                                  // the initial size and position
-                                       finalBounds);                             // the area to fill over the animation duration
-
-            // Add item to queue of transitions
-
-            initialBounds = new Rect()
-            {
-                Width = header2.RenderSize.Width,
-                Height = header2.RenderSize.Height,
-                X = header2Position.X,
-                Y = header2Position.Y
-            };
-
-            surroundButtonTransition.Start((Windows.UI.Color.FromArgb(255, 255, 150, 0)),  // the color for the circlular bloom
-                               initialBounds,                                  // the initial size and position
-                                     finalBounds);                             // the area to fill over the animation duration
-
-            initialBounds = new Rect()
-            {
-                Width = header3.RenderSize.Width,
-                Height = header3.RenderSize.Height,
-                X = header3Position.X,
-                Y = header3Position.Y
-            };
-
-            surroundButtonTransition.Start((Windows.UI.Color.FromArgb(255, 0, 255, 0)),  // the color for the circlular bloom
-                               initialBounds,                                  // the initial size and position
-                                     finalBounds);                             // the area to fill over the animation duration
-
-            initialBounds = new Rect()
-            {
-                Width = header4.RenderSize.Width,
-                Height = header4.RenderSize.Height,
-                X = header4Position.X,
-                Y = header4Position.Y
-            };
-
-            surroundButtonTransition.Start((Windows.UI.Color.FromArgb(255, 0, 0, 255)),  // the color for the circlular bloom
-                               initialBounds,                                  // the initial size and position
-                                     finalBounds);                             // the area to fill over the animation duration
-        }
+        //    //Line underneath reinitialises the transition helpers 
+        //    //because the area that the animation will occur
+        //    //and the area that the animation will be drawn (e.g host for visual)
+        //    //has changed.
+        //    //This way, no matter what the size of the window is
+        //    //The animation fills the Grid
+        //    //at the same speed even after you resize the window
+        //    InitializeTransitionHelper();
+        //}
 
         private void SurroundButtonTransition_ColorBloomTransitionCompleted(object sender, EventArgs e)
         {
