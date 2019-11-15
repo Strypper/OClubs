@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     xmlns:UserControl="using:OClubs.Components.GridViewItem"
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
@@ -45,6 +48,7 @@
                     <PivotItem.Header>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <StackPanel x:Name="firstPivot" Orientation="Horizontal">
                             <TextBlock Text="&#xE117;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="Black"
                                             Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -58,6 +62,8 @@
                     <Grid Name="BlackMarket" Background="Transparent">
                         <UserControl:SellingItemCard/>
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
                         <AppBarButton Name="firstPivot"
@@ -77,6 +83,9 @@
                     <!-->The Grid Below is what will be used to create the color bloom animation inside a button<-->
                     <Grid Name="BlackMarket" Background="Transparent">
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -88,6 +97,7 @@
                     <PivotItem.Header>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <StackPanel Name="secondPivot" Orientation="Horizontal">
                             <TextBlock Text="&#xE719;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
                                             Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -97,6 +107,8 @@
                                             FontSize="20"/>
                         </StackPanel>
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
                         <AppBarButton Name="secondPivot"
@@ -113,6 +125,9 @@
                             </AppBarButton.Content>
                         </AppBarButton>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -125,6 +140,7 @@
                     <PivotItem.Header>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <StackPanel Name="thirdPivot" Orientation="Horizontal">
                             <TextBlock Text="&#xEC32;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#ffb900"
                                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" 
@@ -134,6 +150,8 @@
                                                FontSize="20"/>
                         </StackPanel>
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
                         <AppBarButton Name="thirdPivot"
@@ -150,6 +168,9 @@
                             </AppBarButton.Content>
                         </AppBarButton>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1

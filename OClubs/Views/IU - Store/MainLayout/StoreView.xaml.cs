@@ -53,7 +53,10 @@ namespace OClubs.Views.IU___Store.MainLayout
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
             //If something is carried over when coming to this page
@@ -61,6 +64,9 @@ namespace OClubs.Views.IU___Store.MainLayout
             //Note: This is so that the code will never run when the program starts since
             //this fix for the bug (when navigating to this page) would make the app crash at launch
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -76,6 +82,11 @@ namespace OClubs.Views.IU___Store.MainLayout
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+            //this also helps combat the bug that occurs when navigated to this page
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 
             //this also helps combat the bug that occurs when navigated to this page
@@ -94,7 +105,10 @@ namespace OClubs.Views.IU___Store.MainLayout
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 
@@ -104,6 +118,9 @@ namespace OClubs.Views.IU___Store.MainLayout
         /// Assign a key and a colour to each pivot item. I made the key the same as the name of the 
         /// items themeselves to make it easier for myself.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -125,11 +142,14 @@ namespace OClubs.Views.IU___Store.MainLayout
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             transition = new ColorBloomTransitionHelper(hostForVisual);
 
             surroundButtonTransition = new ColorBloomTransitionHelper(anotherHost);
 
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
             // we pass in the UIElement that will host our Visuals
@@ -139,6 +159,9 @@ namespace OClubs.Views.IU___Store.MainLayout
 
             // when the transition completes, we need to know so we can update other property values
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -167,8 +190,11 @@ namespace OClubs.Views.IU___Store.MainLayout
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             var header = (StackPanel)item.Header;
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
             // now remember, that bloom animation was just transitional
@@ -177,6 +203,9 @@ namespace OClubs.Views.IU___Store.MainLayout
 
             var header = (AppBarButton)item.Header;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -188,7 +217,10 @@ namespace OClubs.Views.IU___Store.MainLayout
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 
@@ -197,6 +229,9 @@ namespace OClubs.Views.IU___Store.MainLayout
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -210,7 +245,10 @@ namespace OClubs.Views.IU___Store.MainLayout
             UICanvas.Clip = clip;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
             //Line underneath reinitialises the transition helpers 
@@ -221,6 +259,9 @@ namespace OClubs.Views.IU___Store.MainLayout
             //The animation fills the Grid
             //at the same speed even after you resize the window
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -236,6 +277,10 @@ namespace OClubs.Views.IU___Store.MainLayout
                 transition.Dispose();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                buttonTransition.Dispose();
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
                 buttonTransition.Dispose();
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -258,7 +303,11 @@ namespace OClubs.Views.IU___Store.MainLayout
             var rightBeforeHeader = beforeheader.SelectedItem as PivotItem;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             var header = rightBeforeHeader.Header as StackPanel;
+=======
+            var header = rightBeforeHeader.Header as AppBarButton;
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
             var header = rightBeforeHeader.Header as AppBarButton;
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -287,7 +336,11 @@ namespace OClubs.Views.IU___Store.MainLayout
             // Add item to queue of transitions
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             var pivotItem = (PivotItem)mainPivot.Items.Single(i => ((StackPanel)((PivotItem)i).Header).Name.Equals(header.Name));
+=======
+            var pivotItem = (PivotItem)mainPivot.Items.Single(i => ((AppBarButton)((PivotItem)i).Header).Name.Equals(header.Name));
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
             var pivotItem = (PivotItem)mainPivot.Items.Single(i => ((AppBarButton)((PivotItem)i).Header).Name.Equals(header.Name));
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -317,11 +370,14 @@ namespace OClubs.Views.IU___Store.MainLayout
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         private void SurroundButtonTransition_ColorBloomTransitionCompleted(object sender, EventArgs e)
         {
             UICanvas.Background = new SolidColorBrush(Windows.UI.Colors.WhiteSmoke);
         }
 =======
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
         //private void limitOfAnimation_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -411,6 +467,9 @@ namespace OClubs.Views.IU___Store.MainLayout
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1

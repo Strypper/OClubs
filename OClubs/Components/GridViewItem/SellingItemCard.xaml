@@ -11,6 +11,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <StackPanel Background="LightCyan" Width="300" Height="300"
                 CornerRadius="5">
         <Border x:Name="ImageWrapper" CornerRadius="5" Background="red"
@@ -21,6 +22,8 @@
 =======
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
     <StackPanel Background="LightCyan" Width="150" Height="150"
                 CornerRadius="5">
         <Border x:Name="ImageWrapper" CornerRadius="5" Background="red"
@@ -29,6 +32,9 @@
                 <Image.Source>
                     <BitmapImage DecodePixelHeight="70" DecodePixelWidth="140"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
@@ -36,6 +42,7 @@
             </Image>
         </Border>
         <TextBlock x:Name="ItemName" Margin="5" Text="Product Name"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                    FontWeight="ExtraBlack" FontSize="30"
@@ -54,6 +61,8 @@
 =======
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
                    FontWeight="ExtraBlack"
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <RelativePanel HorizontalAlignment="Stretch">
@@ -63,6 +72,9 @@
             <TextBlock  x:Name="Price" Text="100$" Margin="5" FontWeight="Bold"
                         Foreground="Green" RelativePanel.AlignRightWithPanel="True"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+=======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 =======
 >>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
