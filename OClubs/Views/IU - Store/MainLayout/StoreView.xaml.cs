@@ -51,25 +51,6 @@ namespace OClubs.Views.IU___Store.MainLayout
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-            //If something is carried over when coming to this page
-            //The following code will run
-            //Note: This is so that the code will never run when the program starts since
-            //this fix for the bug (when navigating to this page) would make the app crash at launch
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
             if (!(e.Parameter == null) && e.Parameter.ToString() != "")
             {
 
@@ -79,22 +60,6 @@ namespace OClubs.Views.IU___Store.MainLayout
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-            //this also helps combat the bug that occurs when navigated to this page
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
-
-            //this also helps combat the bug that occurs when navigated to this page
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
-
-            //this also helps combat the bug that occurs when navigated to this page
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
             if (carefulPlz == true)
             {
                 this.InitializeTransitionHelper();
@@ -103,27 +68,6 @@ namespace OClubs.Views.IU___Store.MainLayout
 
 
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-
-
-
-
-        /// Assign a key and a colour to each pivot item. I made the key the same as the name of the 
-        /// items themeselves to make it easier for myself.
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
         private void InitializeColors()
         {
             _colorsByPivotItem = new PropertySet();
@@ -140,33 +84,15 @@ namespace OClubs.Views.IU___Store.MainLayout
 
         private void InitializeTransitionHelper()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             transition = new ColorBloomTransitionHelper(hostForVisual);
 
             surroundButtonTransition = new ColorBloomTransitionHelper(anotherHost);
-
-=======
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
             // we pass in the UIElement that will host our Visuals
             transition = new ColorBloomTransitionHelper(hostForVisual);
             //buttonTransition = new ColorBloomTransitionHelper(hostForButtonVisual);
             surroundButtonTransition = new ColorBloomTransitionHelper(anotherHost);
-
-            // when the transition completes, we need to know so we can update other property values
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
             transition.ColorBloomTransitionCompleted += ColorBloomTransitionCompleted;
-            surroundButtonTransition.ColorBloomTransitionCompleted += SurroundButtonTransition_ColorBloomTransitionCompleted;
+            //surroundButtonTransition.ColorBloomTransitionCompleted += SurroundButtonTransition_ColorBloomTransitionCompleted;
         }
 
 
@@ -187,54 +113,11 @@ namespace OClubs.Views.IU___Store.MainLayout
 
 
             var item = pendingTransitions.Dequeue();
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             var header = (StackPanel)item.Header;
-=======
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-            // now remember, that bloom animation was just transitional
-
-            // so we need to explicitly set the correct color as background of the layout panel
-
-            var header = (AppBarButton)item.Header;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
 
             UICanvas.Background = new SolidColorBrush((Windows.UI.Color)_colorsByPivotItem[header.Name]);
 
         }
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-
-        /// In response to a XAML layout event on the Grid (named UICanvas) we will keep the animation
-        /// inside UICanvas.
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
         private void UICanvas_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var uiCanvasLocation = UICanvas.TransformToVisual(UICanvas).TransformPoint(new Windows.Foundation.Point(0d, 0d));
@@ -243,28 +126,6 @@ namespace OClubs.Views.IU___Store.MainLayout
                 Rect = new Windows.Foundation.Rect(uiCanvasLocation, e.NewSize)
             };
             UICanvas.Clip = clip;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-            //Line underneath reinitialises the transition helpers 
-            //because the area that the animation will occur
-            //and the area that the animation will be drawn (e.g host for visual)
-            //has changed.
-            //This way, no matter what the size of the window is
-            //The animation fills the Grid
-            //at the same speed even after you resize the window
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
             InitializeTransitionHelper();
         }
 
@@ -275,18 +136,7 @@ namespace OClubs.Views.IU___Store.MainLayout
             if (stopDisposing == false)
             {
                 transition.Dispose();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                 buttonTransition.Dispose();
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
-                buttonTransition.Dispose();
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
-                buttonTransition.Dispose();
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
                 surroundButtonTransition.Dispose();
                 stopDisposing = true;
             }
@@ -301,19 +151,9 @@ namespace OClubs.Views.IU___Store.MainLayout
         {
             var beforeheader = sender as Pivot;
             var rightBeforeHeader = beforeheader.SelectedItem as PivotItem;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             var header = rightBeforeHeader.Header as StackPanel;
-=======
-            var header = rightBeforeHeader.Header as AppBarButton;
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
-            var header = rightBeforeHeader.Header as AppBarButton;
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
-            var header = rightBeforeHeader.Header as AppBarButton;
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+
             var headerPosition = header.TransformToVisual(UICanvas).TransformPoint(new Windows.Foundation.Point(0d, 0d));
 
 
@@ -334,19 +174,9 @@ namespace OClubs.Views.IU___Store.MainLayout
                                        finalBounds);                             // the area to fill over the animation duration
 
             // Add item to queue of transitions
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             var pivotItem = (PivotItem)mainPivot.Items.Single(i => ((StackPanel)((PivotItem)i).Header).Name.Equals(header.Name));
-=======
-            var pivotItem = (PivotItem)mainPivot.Items.Single(i => ((AppBarButton)((PivotItem)i).Header).Name.Equals(header.Name));
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
-            var pivotItem = (PivotItem)mainPivot.Items.Single(i => ((AppBarButton)((PivotItem)i).Header).Name.Equals(header.Name));
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
-            var pivotItem = (PivotItem)mainPivot.Items.Single(i => ((AppBarButton)((PivotItem)i).Header).Name.Equals(header.Name));
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
+
             pendingTransitions.Enqueue(pivotItem);
 
             //This code deals with a bug that occurs when you go navigate to a new page then come back to this one.
@@ -368,53 +198,11 @@ namespace OClubs.Views.IU___Store.MainLayout
 
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         private void SurroundButtonTransition_ColorBloomTransitionCompleted(object sender, EventArgs e)
         {
             UICanvas.Background = new SolidColorBrush(Windows.UI.Colors.WhiteSmoke);
         }
-=======
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-        //private void limitOfAnimation_SizeChanged(object sender, SizeChangedEventArgs e)
-        //{
-        //    //This method is extremly vital. This creates the clipping which stops the 
-        //    //animation from occuring outside of the button.
-        //    var colourBloomCanvasLocation = limitOfAnimation.TransformToVisual(limitOfAnimation).TransformPoint(new Windows.Foundation.Point(0d, 0d));
-
-        //    var clip = new RectangleGeometry()
-
-        //    {
-
-        //        Rect = new Windows.Foundation.Rect(colourBloomCanvasLocation, e.NewSize)
-
-        //    };
-
-        //    limitOfAnimation.Clip = clip;
-        //    //Note: This line isn't really needed as the button never resizes 
-        //    //in this app but it may come in handy later...
-
-        //    //Line underneath reinitialises the transition helpers 
-        //    //because the area that the animation will occur
-        //    //and the area that the animation will be drawn (e.g host for visual)
-        //    //has changed.
-        //    //This way, no matter what the size of the window is
-        //    //The animation fills the Grid
-        //    //at the same speed even after you resize the window
-        //    InitializeTransitionHelper();
-        //}
-
-        private void SurroundButtonTransition_ColorBloomTransitionCompleted(object sender, EventArgs e)
-        {
-            //Changes colour of background to "White Smoke " when 
-            //the animations have finished.
-            UICanvas.Background = new SolidColorBrush(Windows.UI.Colors.WhiteSmoke);
-        }
-
         private void toNextPage_Click(object sender, RoutedEventArgs e)
         {
             //Frame.Navigate(typeof(bloomPage));
@@ -466,12 +254,5 @@ namespace OClubs.Views.IU___Store.MainLayout
                 content.Visibility = Visibility.Visible;
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
-=======
->>>>>>> 4f9fb8e39a120cbc8b52dc551eb0edeb0ca4a9d1
     }
 }
