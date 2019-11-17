@@ -20,10 +20,11 @@
         </TransitionCollection>
     </Page.Transitions>
 
-    <Grid Name="UICanvas"
-          Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-          SizeChanged="UICanvas_SizeChanged">
-        
+    <Page.Resources>
+    </Page.Resources>
+
+    <Grid Name="UICanvas" SizeChanged="UICanvas_SizeChanged">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />

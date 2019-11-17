@@ -11,7 +11,45 @@
     mc:Ignorable="d"
     Background="#fffdfd">
 
-    <Grid>
+
+    <Page.Resources>
+        <Storyboard x:Key="GradientAnimation" RepeatBehavior="Forever" SpeedRatio="0.2">
+            <ColorAnimationUsingKeyFrames
+                Storyboard.TargetName="UI"
+                Storyboard.TargetProperty="(UIElement.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
+                EnableDependentAnimation="True"
+                BeginTime="-0:0:0.5">
+                <LinearColorKeyFrame KeyTime="0:0:0" Value="#FF0000"/>
+                <LinearColorKeyFrame KeyTime="0:0:1" Value="#FFFF00"/>
+                <LinearColorKeyFrame KeyTime="0:0:2" Value="#00FF00"/>
+                <LinearColorKeyFrame KeyTime="0:0:3" Value="#00FFFF"/>
+                <LinearColorKeyFrame KeyTime="0:0:4" Value="#0000FF"/>
+                <LinearColorKeyFrame KeyTime="0:0:5" Value="#FF00FF"/>
+                <LinearColorKeyFrame KeyTime="0:0:6" Value="#FF0000"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames
+                Storyboard.TargetName="UI"
+                Storyboard.TargetProperty="(UIElement.Background).(LinearGradientBrush.GradientStops)[1].(GradientStop.Color)"
+                EnableDependentAnimation="True">
+                <LinearColorKeyFrame KeyTime="0:0:0" Value="#FF0000"/>
+                <LinearColorKeyFrame KeyTime="0:0:1" Value="#FFFF00"/>
+                <LinearColorKeyFrame KeyTime="0:0:2" Value="#00FF00"/>
+                <LinearColorKeyFrame KeyTime="0:0:3" Value="#00FFFF"/>
+                <LinearColorKeyFrame KeyTime="0:0:4" Value="#0000FF"/>
+                <LinearColorKeyFrame KeyTime="0:0:5" Value="#FF00FF"/>
+                <LinearColorKeyFrame KeyTime="0:0:6" Value="#FF0000"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
+
+    <Grid x:Name="UI">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Offset="0"/>
+                <GradientStop Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="300"/>
             <RowDefinition Height="*"/>

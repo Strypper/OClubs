@@ -10,20 +10,17 @@
     d:DesignWidth="400">
 
 
-    <StackPanel Background="LightCyan" Width="300" Height="300"
+    <StackPanel Background="{ThemeResource SystemControlAcrylicWindowBrush}" Width="300" Height="300"
                 CornerRadius="5">
-        <Border x:Name="ImageWrapper" CornerRadius="5" Background="red"
+        <Border x:Name="ImageWrapper" CornerRadius="5"
                 Width="290" Height="150" Margin="5">
             <Image x:Name="SellingItemImage" Width="290" Height="150">
                 <Image.Source>
                     <BitmapImage DecodePixelHeight="290" DecodePixelWidth="150"/>
-
-
                 </Image.Source>
             </Image>
         </Border>
         <TextBlock x:Name="ItemName" Margin="5" Text="Product Name"
-
                    FontWeight="ExtraBlack" FontSize="30"
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <RelativePanel HorizontalAlignment="Stretch">

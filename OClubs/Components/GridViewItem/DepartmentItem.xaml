@@ -13,10 +13,10 @@
 
     <Grid     x:Name="Component"
               VerticalAlignment="Center" HorizontalAlignment="Center" 
-              Width="900" Height="400" CornerRadius="5"
+              Width="929" Height="400" CornerRadius="5"
               PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited">
         <Image x:Name="CoverImage" Source="{Binding DepartmentImageSource, Mode=OneTime, ElementName=Department}" 
-                   Width="900" Height="400" Stretch="UniformToFill"></Image>
+                   Width="929" Height="400" Stretch="UniformToFill"></Image>
         <TextBlock x:Name="Title" FontSize="100" Foreground="#2e3191"
                        VerticalAlignment="Top" HorizontalAlignment="Left"
                        Margin="5" Scale="1,1,0" FontWeight="ExtraBold"
@@ -25,11 +25,11 @@
                 <Vector3Transition Duration="0:0:1"/>
             </TextBlock.ScaleTransition>
         </TextBlock>
-        <Grid x:Name="BelowGrid" Translation="0,400,0" Width="900" Height="400">
+        <Grid x:Name="BelowGrid" Translation="0,400,0" Width="929" Height="400">
             <Grid.TranslationTransition>
                 <Vector3Transition Duration="0:0:1"/>
             </Grid.TranslationTransition>
-            <Rectangle x:Name="Glass" Width="900" Height="400"/>
+            <Rectangle x:Name="Glass" Width="928" Height="400"/>
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" 
                             Orientation="Horizontal">
                 <Border Width="100" Height="100" Margin="5" Background="Red"

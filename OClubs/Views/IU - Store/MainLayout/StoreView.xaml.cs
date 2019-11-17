@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 
@@ -136,7 +137,6 @@ namespace OClubs.Views.IU___Store.MainLayout
             if (stopDisposing == false)
             {
                 transition.Dispose();
-                buttonTransition.Dispose();
                 surroundButtonTransition.Dispose();
                 stopDisposing = true;
             }

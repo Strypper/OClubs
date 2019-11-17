@@ -7,9 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:UserControl="using:OClubs.Components.GridViewItem"
     xmlns:data1="using:OClubs.Models.LocalData"
-    mc:Ignorable="d" Background="#212529">
+    mc:Ignorable="d" x:Name="UI" Background="#2e3191">
 
-    <GridView x:Name="Departments" Margin="8,20,8,5" HorizontalAlignment="Center"
+    <GridView x:Name="Departments" HorizontalAlignment="Center" Margin="0,19,0,0"
                   CanBeScrollAnchor="False">
         <GridView.ItemContainerTransitions>
             <TransitionCollection>

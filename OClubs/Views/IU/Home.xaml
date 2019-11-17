@@ -67,7 +67,7 @@
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </PivotItem.Header>
-                        <Frame x:Name="DepartmentFrame" HorizontalAlignment="Stretch">
+                        <Frame x:Name="DepartmentFrame" HorizontalAlignment="Stretch" CornerRadius="5">
                             <Frame.ContentTransitions>
                                 <TransitionCollection>
                                     <NavigationThemeTransition/>
@@ -84,7 +84,7 @@
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </PivotItem.Header>
-                        <Frame x:Name="AboutFrame" HorizontalAlignment="Stretch">
+                        <Frame x:Name="AboutFrame" HorizontalAlignment="Stretch" CornerRadius="5">
                             <Frame.ContentTransitions>
                                 <TransitionCollection>
                                     <NavigationThemeTransition/>
@@ -101,7 +101,7 @@
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </PivotItem.Header>
-                        <Frame x:Name="IUClubsFrame">
+                        <Frame x:Name="IUClubsFrame" CornerRadius="5">
                             <Frame.ContentTransitions>
                                 <TransitionCollection>
                                     <NavigationThemeTransition/>
