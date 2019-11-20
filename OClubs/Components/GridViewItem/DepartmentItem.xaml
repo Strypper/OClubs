@@ -17,10 +17,12 @@
               PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited">
         <Image x:Name="CoverImage" Source="{Binding DepartmentImageSource, Mode=OneTime, ElementName=Department}" 
                    Width="929" Height="400" Stretch="UniformToFill"></Image>
-        <TextBlock x:Name="Title" FontSize="100" Foreground="#2e3191"
-                       VerticalAlignment="Top" HorizontalAlignment="Left"
-                       Margin="5" Scale="1,1,0" FontWeight="ExtraBold"
-                       Text="{x:Bind DepartmentTitle, Mode=OneWay}">
+        <TextBlock x:Name="Title"
+                    VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Margin="5" Scale="1,1,0" 
+                    FontSize="100" Foreground="#2e3191" FontWeight="ExtraBold">
+            <Run  Text = "{x:Bind DepartmentLogo, Mode=OneWay}" FontFamily="Segoe MDL2 Assets"/>
+            <Run Text = "{x:Bind DepartmentTitle, Mode=OneWay}"/>
             <TextBlock.ScaleTransition>
                 <Vector3Transition Duration="0:0:1"/>
             </TextBlock.ScaleTransition>
@@ -32,22 +34,40 @@
             <Rectangle x:Name="Glass" Width="928" Height="400"/>
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" 
                             Orientation="Horizontal">
-                <Border Width="100" Height="100" Margin="5" Background="Red"
+                <Border Width="100" Height="100" Margin="5"
                         CornerRadius="100">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#FDFC47" Offset="0.0" />
+                            <GradientStop Color="#24FE41" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Border.Background>
                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE125;" FontSize="30" />
                         <TextBlock Text=""/>
                     </StackPanel>
                 </Border>
-                <Border Width="100" Height="100" Margin="55,5,55,5" Background="Blue"
+                <Border Width="100" Height="100" Margin="55,5,55,5"
                         CornerRadius="100">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#fe8c00" Offset="0.0" />
+                            <GradientStop Color="#f83600" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Border.Background>
                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7BE;" FontSize="30" Margin="5"/>
                         <TextBlock Text=""/>
                     </StackPanel>
                 </Border>
-                <Border Width="100" Height="100" Margin="5" Background="Yellow"
+                <Border Width="100" Height="100" Margin="5"
                         CornerRadius="100">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#B3FFAB" Offset="0.0" />
+                            <GradientStop Color="#12FFF7" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Border.Background>
                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE81B;" FontSize="30" />
                         <TextBlock Text=""/>
@@ -59,27 +79,45 @@
                        VerticalAlignment="Center" HorizontalAlignment="Center"
                        Text="{x:Bind DepartmentDescription, Mode=OneWay}">
                 </TextBlock>
-            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                            Width="780" Height="50" Orientation="Horizontal">
-                <Button Width="250" Height="40" Margin="5" VerticalAlignment="Center"
-                            Background="#1e8ad2" CornerRadius="5">
-                    <TextBlock>
+            <StackPanel VerticalAlignment="Bottom"
+                        HorizontalAlignment="Stretch" Height="90" Orientation="Horizontal">
+                <Button Width="295" Height="80" Margin="10,5,5,5" 
+                        VerticalAlignment="Center" CornerRadius="6">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#FDFC47" Offset="0.0" />
+                            <GradientStop Color="#24FE41" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <TextBlock FontSize="20">
                             <Run Text="&#xE717;" FontFamily="Segoe MDL2 Assets"/>
-                            <Run Text="Phone Number"/>
+                            <Run Text="Phone Number" FontWeight="Bold"/>
                     </TextBlock>
                 </Button>
-                <Button Width="250" Height="40" Margin="5" VerticalAlignment="Center"
-                            Background="#1e8ad2" CornerRadius="5">
-                    <TextBlock>
+                <Button Width="295" Height="80" Margin="5" 
+                        VerticalAlignment="Center" CornerRadius="5">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#fe8c00" Offset="0.0" />
+                            <GradientStop Color="#f83600" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <TextBlock FontSize="20">
                             <Run Text="&#xE956;" FontFamily="Segoe MDL2 Assets"/>
-                            <Run Text="Fax"/>
+                            <Run Text="Fax" FontWeight="Bold"/>
                     </TextBlock>
                 </Button>
-                <Button Width="250" Height="40" Margin="5" VerticalAlignment="Center"
-                            Background="#1e8ad2" CornerRadius="5">
-                    <TextBlock>
+                <Button Width="295" Height="80" Margin="5" 
+                        VerticalAlignment="Center" CornerRadius="5">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#B3FFAB" Offset="0.0" />
+                            <GradientStop Color="#12FFF7" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <TextBlock FontSize="20">
                             <Run Text="&#xE715;" FontFamily="Segoe MDL2 Assets"/>
-                            <Run Text="Mail"/>
+                            <Run Text="Mail" FontWeight="Bold"/>
                     </TextBlock>
                 </Button>
             </StackPanel>

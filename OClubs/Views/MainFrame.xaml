@@ -7,6 +7,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <AcrylicBrush x:Key="BackgroundAcrylicBrush" BackgroundSource="HostBackdrop" TintColor="White" TintOpacity="0.2" FallbackColor="White"/>
+
+        <LinearGradientBrush x:Key="DefaultColor" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FDFC47" Offset="0.0" />
+            <GradientStop Color="#24FE41" Offset="0.7" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="LoginForm" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#DCE35B" Offset="0.0" />
+            <GradientStop Color="#45B649" Offset="0.7" />
+        </LinearGradientBrush>
+    </Page.Resources>
 
     <Grid>
         <NavigationView x:Name="MainFrameNavigation" Background="{ThemeResource SystemControlAcrylicElementBrush}"
@@ -34,7 +47,7 @@
             </Frame>
             <NavigationView.PaneFooter>
                 <NavigationViewItem x:Name="ClubManagement" Icon="Manage" Content="Club Management"
-                                    Background="LightGreen" Tapped="ClubManagement_Tapped"/>
+                                    Background="{StaticResource DefaultColor}" Tapped="ClubManagement_Tapped"/>
             </NavigationView.PaneFooter>
         </NavigationView>
     </Grid>

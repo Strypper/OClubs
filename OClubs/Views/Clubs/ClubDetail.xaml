@@ -31,7 +31,7 @@
                     <local1:CircleProgressBar Margin="30"/>
                 </StackPanel>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{StaticResource DefaultColor}"
-                       Width="600" Height="300" Margin="30" Text="KEEP STRIVING FALL DOWN 7 GET UP 8"
+                           Width="600" Height="300" Margin="30" Text="KEEP STRIVING FALL DOWN 7 GET UP 8"
                            FontSize="70" FontWeight="ExtraBold" TextWrapping="WrapWholeWords" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="1">

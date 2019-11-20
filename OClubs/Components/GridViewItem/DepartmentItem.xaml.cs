@@ -49,6 +49,16 @@ namespace OClubs.Components.GridViewItem
         public static readonly DependencyProperty DepartmentTitleProperty =
             DependencyProperty.Register("DepartmentTitle", typeof(string), typeof(DepartmentItem), null);
 
+        public string DepartmentLogo
+        {
+            get { return (string)GetValue(DepartmentLogoProperty); }
+            set { SetValue(DepartmentLogoProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for DepartmentTitle.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DepartmentLogoProperty =
+            DependencyProperty.Register("DepartmentLogo", typeof(string), typeof(DepartmentItem), null);
+
 
 
 

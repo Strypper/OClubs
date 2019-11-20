@@ -21,9 +21,10 @@
         <GridView.ItemTemplate>
             <DataTemplate x:DataType="data1:Department">
                 <UserControl:DepartmentItem Margin="5"
-                                                DepartmentImageSource="{x:Bind ImgSource, Mode=OneTime}"
-                                                DepartmentTitle="{x:Bind Name, Mode=OneTime}"
-                                                DepartmentDescription="{x:Bind Detail, Mode=OneTime}"/>
+                                            DepartmentImageSource="{x:Bind ImgSource, Mode=OneTime}"
+                                            DepartmentTitle="{x:Bind Name, Mode=OneTime}"
+                                            DepartmentLogo="{x:Bind Icon, Mode=OneTime}"
+                                            DepartmentDescription="{x:Bind Detail, Mode=OneTime}"/>
             </DataTemplate>
         </GridView.ItemTemplate>
     </GridView>

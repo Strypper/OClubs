@@ -5,14 +5,21 @@
     xmlns:local="using:OClubs"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Windows10version1903="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 8)"
-    xmlns:local1="using:OClubs.Components.Buttons"
-    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d" Loaded="Page_Loaded"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
         <AcrylicBrush x:Key="BackgroundAcrylicBrush" BackgroundSource="HostBackdrop" TintColor="White" TintOpacity="0.2" FallbackColor="White"/>
+
+        <LinearGradientBrush x:Key="DefaultColor" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FDFC47" Offset="0.0" />
+            <GradientStop Color="#24FE41" Offset="0.7" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="LoginForm" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#DCE35B" Offset="0.0" />
+            <GradientStop Color="#45B649" Offset="0.7" />
+        </LinearGradientBrush>
     </Page.Resources>
 
 
@@ -25,22 +32,21 @@
         <Grid x:Name="Head" Grid.Row="0" Visibility="Collapsed">
             <TextBlock x:Name="Logo" VerticalAlignment="Top" HorizontalAlignment="Left"
                        Text="OClubs" FontSize="50" FontWeight="ExtraBold"
-                       Foreground="LightGreen" Margin="5" Scale="0,0,0">
+                       Foreground="{StaticResource DefaultColor}" Margin="5" Scale="0,0,0">
                 <TextBlock.ScaleTransition>
                     <Vector3Transition Duration="0:0:1.5"/>
                 </TextBlock.ScaleTransition>
             </TextBlock>
             <TextBlock x:Name="Intro" HorizontalAlignment="Center"
                        Text="Explore and Research Projects" FontWeight="ExtraBold"
-                       Foreground="LightGreen" FontSize="50"
+                       Foreground="{StaticResource DefaultColor}" FontSize="50"
                        Margin="5">
                 <TextBlock.TranslationTransition>
                     <Vector3Transition Duration="0:0:1.5"/>
                 </TextBlock.TranslationTransition>
             </TextBlock>
         </Grid>
-        <Grid x:Name="Down" Grid.Row="1"
-              Background="LightGreen">
+        <Grid x:Name="Down" Grid.Row="1" Background="{StaticResource DefaultColor}">
             <StackPanel x:Name="LoginForm" VerticalAlignment="Center" HorizontalAlignment="Center"
                         Width="600" CornerRadius="5">
 
@@ -49,7 +55,7 @@
                 </StackPanel.TranslationTransition>
 
                 <Pivot HorizontalAlignment="Center" VerticalAlignment="Center"
-                       Foreground="#00cc6a" Background="#3a3a3b">
+                       Foreground="#00cc6a" Background="{StaticResource LoginForm}">
                     <PivotItem Header="Sign-Up">
                         <StackPanel>
                             <StackPanel.ChildrenTransitions>
@@ -111,7 +117,7 @@
                             <Button x:Name="SignUp" VerticalAlignment="Center" HorizontalAlignment="Center"
                                 Width="150" Height="50" Margin="15" CornerRadius="5" Click="SignUp_Click"
                                 PointerEntered="SignUp_PointerEntered" PointerExited="SignUp_PointerExited"
-                                CenterPoint="75, 25, 0" Background="LightGreen">
+                                CenterPoint="75, 25, 0" Background="{StaticResource DefaultColor}">
                                 <Button.ScaleTransition>
                                     <Vector3Transition Duration="0:0:0.5"/>
                                 </Button.ScaleTransition>
@@ -138,9 +144,8 @@
                     </PivotItem>
                 </Pivot>
             </StackPanel>
-            <HyperlinkButton x:Name="GuessEnter" Click="GuessEnter_Click"
-                             Content="Explore as guess" Margin="10" FontSize="25"
-                             VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <Button x:Name="Another" Width="200" Height="50" Background="Green"
+                Style="{StaticResource BubbleButtonStyle}"/>
         </Grid>
     </Grid>
 </Page>
