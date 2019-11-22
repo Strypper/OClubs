@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -118,11 +118,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BubbleButton\Common\Extension.cs" />
-    <Compile Include="BubbleButton\Common\VisualExtensions.cs" />
-    <Compile Include="BubbleButton\Controls\Bubble.cs" />
-    <Compile Include="BubbleButton\Controls\BubbleView.cs" />
-    <Compile Include="BubbleButton\Controls\SimpleShadowPanel.cs" />
+    <Compile Include="Common\Extension.cs" />
+    <Compile Include="Common\VisualExtensions.cs" />
+    <Compile Include="Controls\Bubble.cs" />
+    <Compile Include="Controls\BubbleView.cs" />
+    <Compile Include="Controls\SimpleShadowPanel.cs" />
     <Compile Include="Components\Buttons\GuessLogin.xaml.cs">
       <DependentUpon>GuessLogin.xaml</DependentUpon>
     </Compile>
@@ -195,6 +195,8 @@
     <Content Include="Assets\LocalMedia\Images\Departments\IT.jpg" />
     <Content Include="Assets\LocalMedia\Images\Logos\IU-Logo.png" />
     <Content Include="Assets\LocalMedia\Images\Logos\Vision.png" />
+    <Content Include="Assets\LocalMedia\Images\Wallpaper\LogInWallpaper.jpg" />
+    <Content Include="Assets\LocalMedia\Images\Wallpaper\Rain.jpg" />
     <Content Include="Assets\LocalMedia\Images\Wallpaper\Triangle.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -210,11 +212,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="BubbleButton\Themes\BubbleButtonStyle.xaml">
+    <Page Include="Themes\BubbleButtonStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="BubbleButton\Themes\Generic.xaml">
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -28,81 +28,21 @@ namespace OClubs
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        Windows.UI.Composition.Compositor _composition = null;
         public MainPage()
         {
             this.InitializeComponent();
         }
         public void ExecuteAnimation()
         {
-            CreateImplicitAnimation();
             Head.Visibility = Visibility.Visible;
             Down.Opacity = 1;
             LoginForm.Translation = new Vector3(0, -300, 0);
             Intro.Translation = new Vector3(0, 100, 0);
             Logo.Scale = new Vector3(1, 1, 0);
         }
-
-        private void SignUp_PointerEntered(object sender, PointerRoutedEventArgs e)
-        {
-            SignUp.Scale = new Vector3(1.2f, 1.2f, 1);
-        }
-
-        private void SignUp_PointerExited(object sender, PointerRoutedEventArgs e)
-        {
-           SignUp.Scale = new Vector3(1, 1, 1);
-        }
-
-        private void LogIn_PointerEntered(object sender, PointerRoutedEventArgs e)
-        {
-            LogIn.Scale = new Vector3(1.2f, 1.2f, 1);
-        }
-
-        private void LogIn_PointerExited(object sender, PointerRoutedEventArgs e)
-        {
-            LogIn.Scale = new Vector3(1, 1, 1);
-        }
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             ExecuteAnimation();
-        }
-
-
-
-
-
-
-
-
-
-        void FetchCompositor()
-        {
-            if (_composition == null)
-                _composition = ElementCompositionPreview.GetElementVisual(this).Compositor;
-        }
-
-
-        void CreateImplicitAnimation()
-        {
-            FetchCompositor();
-            Head.Visibility = Visibility.Collapsed;
-
-            var ScaleHeaderAnimation = _composition.CreateScalarKeyFrameAnimation();
-
-            ScaleHeaderAnimation.InsertKeyFrame(0, 0);
-            ScaleHeaderAnimation.InsertKeyFrame(1, 1f);
-            ScaleHeaderAnimation.Duration = TimeSpan.FromSeconds(0.5f);
-            ScaleHeaderAnimation.Target = "Scale.Y";
-            ElementCompositionPreview.SetImplicitShowAnimation(Head, ScaleHeaderAnimation);
-
-            var FadeHeaderAnimation = _composition.CreateScalarKeyFrameAnimation();
-
-            FadeHeaderAnimation.InsertKeyFrame(0, 0);
-            FadeHeaderAnimation.InsertKeyFrame(1, 1f);
-            FadeHeaderAnimation.Duration = TimeSpan.FromSeconds(1.5f);
-            FadeHeaderAnimation.Target = "Opacity";
-            ElementCompositionPreview.SetImplicitShowAnimation(Down, FadeHeaderAnimation);
         }
 
         private async void GuessEnter_Click(object sender, RoutedEventArgs e)

@@ -2,8 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:OClubs"
-    xmlns:control="using:OClubs.BubbleButton.Controls"
-    xmlns:common="using:OClubs.BubbleButton.Common">
+    xmlns:control="using:OClubs.Controls"
+    xmlns:common="using:OClubs.Common">
 
     <Style TargetType="Button" x:Name="BubbleButtonStyle">
         <Setter Property="Background" Value="{ThemeResource ButtonBackground}" />

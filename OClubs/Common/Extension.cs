@@ -1,7 +1,7 @@
 ﻿using System;
 using Windows.UI.Composition;
 
-namespace OClubs.BubbleButton.Common
+namespace OClubs.Common
 {
     public static class Extensions
     {

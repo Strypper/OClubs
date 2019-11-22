@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Composition;
 using Windows.UI;
-using OClubs.BubbleButton.Common;
+using OClubs.Common;
 
-namespace OClubs.BubbleButton.Controls
+namespace OClubs.Controls
 {
     public class Bubble : IDisposable
     {

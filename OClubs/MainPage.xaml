@@ -32,21 +32,25 @@
         <Grid x:Name="Head" Grid.Row="0" Visibility="Collapsed">
             <TextBlock x:Name="Logo" VerticalAlignment="Top" HorizontalAlignment="Left"
                        Text="OClubs" FontSize="50" FontWeight="ExtraBold"
-                       Foreground="{StaticResource DefaultColor}" Margin="5" Scale="0,0,0">
+                       Foreground="#348be8" Margin="5" Scale="0,0,0">
                 <TextBlock.ScaleTransition>
                     <Vector3Transition Duration="0:0:1.5"/>
                 </TextBlock.ScaleTransition>
             </TextBlock>
             <TextBlock x:Name="Intro" HorizontalAlignment="Center"
                        Text="Explore and Research Projects" FontWeight="ExtraBold"
-                       Foreground="{StaticResource DefaultColor}" FontSize="50"
+                       Foreground="#348be8" FontSize="50"
                        Margin="5">
                 <TextBlock.TranslationTransition>
                     <Vector3Transition Duration="0:0:1.5"/>
                 </TextBlock.TranslationTransition>
             </TextBlock>
         </Grid>
-        <Grid x:Name="Down" Grid.Row="1" Background="{StaticResource DefaultColor}">
+        <Grid x:Name="Down" Grid.Row="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/LocalMedia/Images/Wallpaper/Rain.jpg"
+                            Stretch="UniformToFill"/>
+            </Grid.Background>
             <StackPanel x:Name="LoginForm" VerticalAlignment="Center" HorizontalAlignment="Center"
                         Width="600" CornerRadius="5">
 
@@ -55,7 +59,7 @@
                 </StackPanel.TranslationTransition>
 
                 <Pivot HorizontalAlignment="Center" VerticalAlignment="Center"
-                       Foreground="#00cc6a" Background="{StaticResource LoginForm}">
+                       Background="#7c60d1">
                     <PivotItem Header="Sign-Up">
                         <StackPanel>
                             <StackPanel.ChildrenTransitions>
@@ -67,9 +71,9 @@
                             </StackPanel.ChildrenTransitions>
                             <StackPanel Orientation="Horizontal">
                                 <TextBox x:Name="UserID" Header="User-ID" Margin="5"
-                                     Width="280" CornerRadius="5" Foreground="#00cc6a"/>
+                                     Width="280" CornerRadius="5"/>
                                 <TextBox x:Name="Email" Header="Email" Margin="5"
-                                     Width="280" CornerRadius="5" Foreground="#00cc6a"/>
+                                     Width="280" CornerRadius="5"/>
                             </StackPanel>
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
@@ -115,12 +119,8 @@
                                 </StackPanel>
                             </StackPanel>
                             <Button x:Name="SignUp" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                Width="150" Height="50" Margin="15" CornerRadius="5" Click="SignUp_Click"
-                                PointerEntered="SignUp_PointerEntered" PointerExited="SignUp_PointerExited"
-                                CenterPoint="75, 25, 0" Background="{StaticResource DefaultColor}">
-                                <Button.ScaleTransition>
-                                    <Vector3Transition Duration="0:0:0.5"/>
-                                </Button.ScaleTransition>
+                                Width="150" Height="50" Margin="20" Click="SignUp_Click" FontWeight="ExtraBold"
+                                Style="{StaticResource BubbleButtonStyle}" Background="#348be8">
                                 Be a member
                             </Button>
                         </StackPanel>
@@ -132,20 +132,24 @@
                             <TextBox x:Name="LogInPassword" CornerRadius="5"
                                  Header="Password" Width="280" Margin="5"/>
                             <Button x:Name="LogIn" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                Width="150" Height="50" Margin="15" CornerRadius="5" 
-                                PointerEntered="LogIn_PointerEntered" PointerExited="LogIn_PointerExited"
-                                CenterPoint="75, 25, 0" Background="LightGreen">
-                                <Button.ScaleTransition>
-                                    <Vector3Transition Duration="0:0:0.5"/>
-                                </Button.ScaleTransition>
+                                    Width="150" Height="50" Margin="15" Style="{StaticResource BubbleButtonStyle}" 
+                                    Background="#348be8" FontWeight="ExtraBold">
                                 Log-In
                             </Button>
                         </StackPanel>
                     </PivotItem>
                 </Pivot>
             </StackPanel>
-            <Button x:Name="Another" Width="200" Height="50" Background="Green"
-                Style="{StaticResource BubbleButtonStyle}"/>
+            <Button x:Name="Another" Width="200" Height="50" Background="#ffa530"
+                    Style="{StaticResource BubbleButtonStyle}" Margin="20"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                    Click="GuessEnter_Click">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                           FontWeight="ExtraBold">
+                    <Run Text="Explore as guess  " />
+                    <Run Text="&#xE0AB;" FontFamily="Segoe MDL2 Assets"/>
+                </TextBlock>
+            </Button>
         </Grid>
     </Grid>
 </Page>

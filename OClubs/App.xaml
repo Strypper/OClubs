@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary >
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="OClubs/BubbleButton/Themes/BubbleButtonStyle.xaml"/>
+                <ResourceDictionary Source="Themes/BubbleButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
