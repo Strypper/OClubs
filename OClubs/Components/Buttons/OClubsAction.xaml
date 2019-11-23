@@ -13,7 +13,7 @@
                         Width="400" Height="200"
                         PointerEntered="ActionButton_PointerEntered"
                         PointerExited="ActionButton_PointerExited"
-                        CornerRadius="15" Margin="15">
+                        Style="{StaticResource BubbleButtonStyle}" Margin="15">
         <StackPanel VerticalAlignment="Center">
             <TextBlock      x:Name="Icon"
                             FontSize="70" Text="{Binding IconLogo, ElementName=ActionButt, Mode=OneTime}"

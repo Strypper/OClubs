@@ -32,44 +32,6 @@
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualTransition>
-                                    <VisualTransition From="Pressed" To="Normal">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BubbleView" Storyboard.TargetProperty="IsBubbing" Duration="0">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="True" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleX" To="1" Duration="0:0:0.1" />
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleY" To="1" Duration="0:0:0.1" />
-                                        </Storyboard>
-                                    </VisualTransition>
-                                    <VisualTransition From="Pressed" To="PointerOver">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BubbleView" Storyboard.TargetProperty="IsBubbing" Duration="0">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="True" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleX" To="1.05" Duration="0:0:0.1" />
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleY" To="1.05" Duration="0:0:0.1" />
-                                        </Storyboard>
-                                    </VisualTransition>
-
-
-                                    <VisualTransition From="PointerOver" To="Normal">
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleX" To="1" Duration="0:0:0.1" />
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleY" To="1" Duration="0:0:0.1" />
-                                        </Storyboard>
-                                    </VisualTransition>
-                                    <VisualTransition From="Normal" To="PointerOver">
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleX" To="1.05" Duration="0:0:0.1" />
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleY" To="1.05" Duration="0:0:0.1" />
-                                        </Storyboard>
-                                    </VisualTransition>
-                                    <VisualTransition To="Pressed">
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleX" To="0.95" Duration="0:0:0.1" />
-                                            <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleY" To="0.95" Duration="0:0:0.1" />
-                                        </Storyboard>
-                                    </VisualTransition>
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" >
                                     <VisualState.Setters>
@@ -77,19 +39,11 @@
                                     </VisualState.Setters>
                                 </VisualState>
                                 <VisualState x:Name="PointerOver">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleX" To="1.05" Duration="0" />
-                                        <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleY" To="1.05" Duration="0" />
-                                    </Storyboard>
                                     <VisualState.Setters>
                                         <Setter Target="ContentGrid.(common:VisualExtensions.Scale)" Value="1.05,1.05,1" />
                                     </VisualState.Setters>
                                 </VisualState>
                                 <VisualState x:Name="Pressed">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleX" To="0.95" Duration="0" />
-                                        <DoubleAnimation Storyboard.TargetName="ContentScale" Storyboard.TargetProperty="ScaleY" To="0.95" Duration="0" />
-                                    </Storyboard>
                                     <VisualState.Setters>
                                         <Setter Target="ContentGrid.(common:VisualExtensions.Scale)" Value="0.95,0.95,1" />
                                     </VisualState.Setters>
@@ -102,9 +56,6 @@
                         <control:BubbleView x:Name="BubbleView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="{TemplateBinding Background}" />
                         <Grid x:Name="ContentGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5"
                               common:VisualExtensions.Scale="1,1,1" common:VisualExtensions.IsBindCenterPoint="True" common:VisualExtensions.Transations="Scale">
-                            <Grid.RenderTransform>
-                                <ScaleTransform x:Name="ContentScale" ScaleX="1" ScaleY="1" />
-                            </Grid.RenderTransform>
                             <control:SimpleShadowPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{TemplateBinding Background}">
                                 <Rectangle x:Name="Background" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="{TemplateBinding Background}" RadiusX="5" RadiusY="5" />
                             </control:SimpleShadowPanel>

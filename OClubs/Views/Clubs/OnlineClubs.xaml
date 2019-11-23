@@ -8,7 +8,7 @@
     xmlns:UserControl="using:OClubs.Components.GridViewItem"
     xmlns:data="using:OClubs.Models.Club"
     xmlns:local1="using:OClubs.Components.Buttons"
-    mc:Ignorable="d"
+    mc:Ignorable="d" Loaded="Page_Loaded"
     Background="#fffdfd">
 
 
@@ -55,7 +55,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <ScrollViewer HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Hidden" Grid.Row="0">
-            <StackPanel x:Name="Head" Orientation="Horizontal">
+            <StackPanel x:Name="Head" Orientation="Horizontal" Translation="1000,0,0">
+                <StackPanel.TranslationTransition>
+                    <Vector3Transition Duration="0:0:02"/>
+                </StackPanel.TranslationTransition>
                 <local1:OClubsAction IconLogo="&#xE81B;" AColor="#7134bf"
                                      AName="CREATE YOUR OWN CLUB" AFontFamily="Segoe MDL2 Assets"/>
                 <local1:OClubsAction IconLogo="&#xE716;" AColor="#ffa40b"

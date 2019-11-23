@@ -63,7 +63,6 @@ namespace OClubs.Controls
             ElementCompositionPreview.SetElementChildVisual(BubbleHost, _BubblesVisual);
         }
 
-        //初始化CanvasDevice和GraphicsDevice
         private void SetupDevices()
         {
             DisplayInformation.DisplayContentsInvalidated += DisplayInformation_DisplayContentsInvalidated;
@@ -74,8 +73,6 @@ namespace OClubs.Controls
             _canvasDevice.DeviceLost += _canvasDevice_DeviceLost;
             _graphicsDevice.RenderingDeviceReplaced += _graphicsDevice_RenderingDeviceReplaced;
         }
-
-        //重新设置CanvasDevice和GraphicsDevice
         private void ResetDevices(bool IsDeviceLost)
         {
             try
@@ -86,12 +83,10 @@ namespace OClubs.Controls
                     _canvasDevice = CanvasDevice.GetSharedDevice();
                     _canvasDevice.DeviceLost += _canvasDevice_DeviceLost;
                 }
-                //重新设置GraphicsDevice，在CanvasDevice丢失时会触发异常
                 CanvasComposition.SetCanvasDevice(_graphicsDevice, _canvasDevice);
             }
             catch (Exception e) when (_canvasDevice != null && _canvasDevice.IsDeviceLost(e.HResult))
             {
-                //通知设备已丢失，并触发CanvasDevice.DeviceLost
                 _canvasDevice.RaiseDeviceLost();
             }
         }
@@ -153,21 +148,17 @@ namespace OClubs.Controls
                 }
             }
         }
-
-        //当显示需要重绘时，尝试重新给GraphicsDevice设置CanvasDevice，如果抛出异常，则说明CanvasDevice已丢失
         private void DisplayInformation_DisplayContentsInvalidated(DisplayInformation sender, object args)
         {
             System.Diagnostics.Debug.WriteLine("Display Contents Invalidated");
             ResetDevices(false);
         }
 
-        //当设备丢失时，重新设置设备
         private void _canvasDevice_DeviceLost(CanvasDevice sender, object args)
         {
             ResetDevices(true);
         }
 
-        //GraphicsDevice的绘制设备重置时，即触发CanvasComposition.SetCanvasDevice时，重新绘制气泡
         private void _graphicsDevice_RenderingDeviceReplaced(CompositionGraphicsDevice sender, RenderingDeviceReplacedEventArgs args)
         {
             CreateBubbles();
@@ -196,8 +187,6 @@ namespace OClubs.Controls
             }
             CreateBubbles();
         }
-
-        //当设置IsBubbing = true时，触发ShowBubbles，并将IsBubbing设置为false，等待下次设置IsBubbing = true
         public bool IsBubbing
         {
             get { return (bool)GetValue(IsBubbingProperty); }

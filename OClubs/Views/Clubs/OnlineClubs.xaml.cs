@@ -39,5 +39,10 @@ namespace OClubs.Views.Clubs
             //var club = (TestData)e.ClickedItem;
             Frame.Navigate(typeof(ClubDetail));
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Head.Translation = new System.Numerics.Vector3(0, 0, 0);
+        }
     }
 }
