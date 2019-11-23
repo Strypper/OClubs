@@ -29,7 +29,7 @@ namespace OClubs.Views.Clubs
         {
             this.InitializeComponent();
             ((Storyboard)Resources["GradientAnimation"]).Begin();
-            this.NavigationCacheMode = NavigationCacheMode.Enabled;
+            //this.NavigationCacheMode = NavigationCacheMode.Enabled;
             Clubs = TestData.GetData();
             OClubs.ItemsSource = Clubs;
         }
