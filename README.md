@@ -41,7 +41,7 @@ anything that IU system provide and need:
 
 # Some Animations Demo
 * Club Animation
-![](Demo/ClubAnimation.gif)
+![](Demo/ClubsAnimation.gif)
 * IUServices Animation 
 ![](Demo/IUServicesAnimation.gif)
 * IUMarket Animtion
