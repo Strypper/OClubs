@@ -1,6 +1,6 @@
 # OClubs (The new IU system client for IU organization) Version 1.1.1
-This is the new IU Client just for Windows 10 student embrace the world of Native App, Send them
-a clear message that .NET is changing and Native is always better than the browser. This project will
+This is the new "NATIVE" IU Client just for Windows 10 that not only run on the newsest Microsoft Technologies but also take advantage
+the Windows Echo System . This project will
 anything that IU system provide and need:
 * IU Services 
 * IU Market
