@@ -77,7 +77,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <GridView x:Name="OClubs" Grid.Column="0" IsItemClickEnabled="True"
-                      ItemClick="OClubs_ItemClick">
+                      ItemClick="OClubs_ItemClick" Translation="0,1000,0">
+                <GridView.TranslationTransition>
+                    <Vector3Transition Duration="0:0:02"/>
+                </GridView.TranslationTransition>
                 <GridView.Header>
                     <Grid>
                         <TextBlock Text="CLUBS" VerticalAlignment="Center" HorizontalAlignment="Left"

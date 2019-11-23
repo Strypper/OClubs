@@ -43,6 +43,7 @@ namespace OClubs.Views.Clubs
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Head.Translation = new System.Numerics.Vector3(0, 0, 0);
+            OClubs.Translation = new System.Numerics.Vector3(0, 0, 0);
         }
     }
 }

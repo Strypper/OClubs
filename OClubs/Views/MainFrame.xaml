@@ -38,7 +38,7 @@
                 <NavigationViewItem x:Name="MysteryIU" Icon="Contact2" Content="Mystery IUers"/>
                 <NavigationViewItem x:Name="BlackBoard" Icon="ViewAll" Content="BlackBoard"/>
             </NavigationView.MenuItems>
-            <Frame x:Name="TheMainFrame" CornerRadius="15">
+            <Frame x:Name="TheMainFrame" CornerRadius="15,0,0,0">
                 <Frame.ContentTransitions>
                     <TransitionCollection>
                         <NavigationThemeTransition/>
