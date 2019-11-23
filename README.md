@@ -8,9 +8,11 @@ This is the new "NATIVE" IU Client support for
 * Xbox
 * HoloLens
 * Windows Phone
-that not only run on the newsest Microsoft Technologies but also take advantage
+
+That not only run on the newsest Microsoft Technologies but also take advantage
 the Windows Echo System . This project will
 anything that IU system provide and need:
+
 * IU Services 
 * IU Market
 * IU Mystery
