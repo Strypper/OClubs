@@ -1,5 +1,14 @@
 # OClubs (The new IU system client for IU organization) Version 1.1.1
-This is the new "NATIVE" IU Client just for Windows 10 that not only run on the newsest Microsoft Technologies but also take advantage
+This is the new "NATIVE" IU Client support for 
+* Windows 10 
+* Windows 10X 
+* Windows 10S
+* Windows on ARM (Native ARM 64) 
+* Windows 10 IoT 
+* Xbox
+* HoloLens
+* Windows Phone
+that not only run on the newsest Microsoft Technologies but also take advantage
 the Windows Echo System . This project will
 anything that IU system provide and need:
 * IU Services 
