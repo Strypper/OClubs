@@ -13,54 +13,22 @@
 
 
     <Page.Resources>
-        <Storyboard x:Key="GradientAnimation" RepeatBehavior="Forever" SpeedRatio="0.2">
-            <ColorAnimationUsingKeyFrames
-                Storyboard.TargetName="UI"
-                Storyboard.TargetProperty="(UIElement.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
-                EnableDependentAnimation="True"
-                BeginTime="-0:0:0.5">
-                <LinearColorKeyFrame KeyTime="0:0:0" Value="#FF0000"/>
-                <LinearColorKeyFrame KeyTime="0:0:1" Value="#FFFF00"/>
-                <LinearColorKeyFrame KeyTime="0:0:2" Value="#00FF00"/>
-                <LinearColorKeyFrame KeyTime="0:0:3" Value="#00FFFF"/>
-                <LinearColorKeyFrame KeyTime="0:0:4" Value="#0000FF"/>
-                <LinearColorKeyFrame KeyTime="0:0:5" Value="#FF00FF"/>
-                <LinearColorKeyFrame KeyTime="0:0:6" Value="#FF0000"/>
-            </ColorAnimationUsingKeyFrames>
-            <ColorAnimationUsingKeyFrames
-                Storyboard.TargetName="UI"
-                Storyboard.TargetProperty="(UIElement.Background).(LinearGradientBrush.GradientStops)[1].(GradientStop.Color)"
-                EnableDependentAnimation="True">
-                <LinearColorKeyFrame KeyTime="0:0:0" Value="#FF0000"/>
-                <LinearColorKeyFrame KeyTime="0:0:1" Value="#FFFF00"/>
-                <LinearColorKeyFrame KeyTime="0:0:2" Value="#00FF00"/>
-                <LinearColorKeyFrame KeyTime="0:0:3" Value="#00FFFF"/>
-                <LinearColorKeyFrame KeyTime="0:0:4" Value="#0000FF"/>
-                <LinearColorKeyFrame KeyTime="0:0:5" Value="#FF00FF"/>
-                <LinearColorKeyFrame KeyTime="0:0:6" Value="#FF0000"/>
-            </ColorAnimationUsingKeyFrames>
-        </Storyboard>
+        <AcrylicBrush x:Key="BackgroundAcrylicBrush" BackgroundSource="HostBackdrop" TintColor="White" TintOpacity="0.2" FallbackColor="White"/>
     </Page.Resources>
 
 
     <Grid x:Name="UI">
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Offset="0"/>
-                <GradientStop Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="300"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ScrollViewer HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Hidden" Grid.Row="0">
-            <StackPanel x:Name="Head" Orientation="Horizontal" Translation="1000,0,0">
+        <StackPanel x:Name="Head" Orientation="Horizontal" Translation="1000,0,0"
+                    HorizontalAlignment="Center">
                 <StackPanel.TranslationTransition>
                     <Vector3Transition Duration="0:0:02"/>
                 </StackPanel.TranslationTransition>
-                <local1:OClubsAction IconLogo="&#xE81B;" AColor="#7134bf"
-                                     AName="CREATE YOUR OWN CLUB" AFontFamily="Segoe MDL2 Assets"/>
+                <!--<local1:OClubsAction IconLogo="&#xE81B;" AColor="#7134bf"
+                                     AName="CREATE YOUR OWN CLUB" AFontFamily="Segoe MDL2 Assets"/>-->
                 <local1:OClubsAction IconLogo="&#xE716;" AColor="#ffa40b"
                                      AName="FIND YOUR PARTNERS" AFontFamily="Segoe MDL2 Assets"/>
                 <local1:OClubsAction IconLogo="&#xEBD2;" AColor="#edabc7"
@@ -69,15 +37,16 @@
                                      AName="COMPETITIONS" AFontFamily="Segoe UI Symbol"/>
                 <local1:OClubsAction IconLogo="&#x1F378;" AColor="#ffecc4"
                                      AName="EVENTS" AFontFamily="Segoe UI Symbol"/>
-            </StackPanel>
-        </ScrollViewer>
-        <Grid Grid.Row="1">
+        </StackPanel>
+        <Grid Grid.Row="1" Background="{StaticResource BackgroundAcrylicBrush}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1300"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <GridView x:Name="OClubs" Grid.Column="0" IsItemClickEnabled="True"
-                      ItemClick="OClubs_ItemClick" Translation="0,1000,0">
+        <GridView x:Name="OClubs" Grid.Column="0" IsItemClickEnabled="True"
+                      ItemClick="OClubs_ItemClick" Translation="0,1000,0"
+                      ScrollViewer.IsVerticalScrollChainingEnabled="False"
+                      ScrollViewer.VerticalScrollMode="Disabled">
                 <GridView.TranslationTransition>
                     <Vector3Transition Duration="0:0:02"/>
                 </GridView.TranslationTransition>
@@ -103,8 +72,8 @@
                         <UserControl:ClubItem Margin="5"/>
                     </DataTemplate>
                 </GridView.ItemTemplate>
-            </GridView>
-            <ListView x:Name="Events" Grid.Column="1">
+        </GridView>
+        <ListView x:Name="Events" Grid.Column="1">
                 <ListView.Header>
                     <Grid>
                         <TextBlock Text="EVENTS" VerticalAlignment="Center" HorizontalAlignment="Left"
@@ -114,7 +83,7 @@
                             Margin="5"/>
                     </Grid>
                 </ListView.Header>
-            </ListView>
+        </ListView>
         </Grid>
         
     </Grid>

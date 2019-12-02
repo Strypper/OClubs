@@ -1,21 +1,14 @@
-﻿using OClubs.Views;
+﻿using OClubs.Models.Club;
+using OClubs.Models.LocalData;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Core;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace OClubs
@@ -25,6 +18,9 @@ namespace OClubs
     /// </summary>
     sealed partial class App : Application
     {
+        public static List<Department> department;
+        public static List<ClubDataConcept> Clubs;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -33,6 +29,9 @@ namespace OClubs
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            department = DepartmentInfo.getInfo();
+            Clubs = TestData.GetData();
         }
 
         /// <summary>
@@ -60,8 +59,6 @@ namespace OClubs
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
-                var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-                coreTitleBar.ExtendViewIntoTitleBar = true;
             }
 
             if (e.PrelaunchActivated == false)
@@ -75,8 +72,11 @@ namespace OClubs
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
+                CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+                var tBar = ApplicationView.GetForCurrentView().TitleBar;
+                tBar.ButtonBackgroundColor = Colors.Transparent;
+                tBar.ButtonInactiveBackgroundColor = Colors.Transparent;
             }
-            CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
         }
 
         /// <summary>

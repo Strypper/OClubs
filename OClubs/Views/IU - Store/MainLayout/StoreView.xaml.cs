@@ -29,7 +29,7 @@ namespace OClubs.Views.IU___Store.MainLayout
         bool carefulPlz = false;
         bool stopDisposing = false;
         PropertySet _colorsByPivotItem;
-        ColorBloomTransitionHelper transition, buttonTransition, surroundButtonTransition;
+        ColorBloomTransitionHelper transition, surroundButtonTransition;
         Queue<PivotItem> pendingTransitions = new Queue<PivotItem>();
         Queue<Rectangle> pendingPageTransitions = new Queue<Rectangle>();
         public StoreView()

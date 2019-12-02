@@ -25,6 +25,11 @@ namespace OClubs.Components.GridViewItem
 {
     public sealed partial class DepartmentItem : UserControl
     {
+        private Compositor compositor = Window.Current.Compositor;
+        private SpriteVisual effectVisual;
+        private CompositionEffectFactory effectFactory;
+        private CompositionEffectBrush effectBrush;
+        private SpringScalarNaturalMotionAnimation _springAnimation;
 
         public string DepartmentImageSource
         {
@@ -76,17 +81,8 @@ namespace OClubs.Components.GridViewItem
         public DepartmentItem()
         {
             this.InitializeComponent();
-            InitializeFrostedGlass(Glass);
+            //InitializeFrostedGlass(Glass);
         }
-
-
-
-
-
-
-
-
-
 
 
         private void Border_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -94,8 +90,8 @@ namespace OClubs.Components.GridViewItem
             Title.Scale = new System.Numerics.Vector3(0.3f, 0.3f, 0);
             BelowGrid.Translation = new System.Numerics.Vector3(0, 0, 0);
 
-            //Blur Animation (Very Buggy)
-            //await CoverImage.Blur(value: 10, duration: 1500, delay: 0).StartAsync();
+            _springAnimation.FinalValue = 100f;
+            effectBrush.StartAnimation("Blur.BlurAmount", _springAnimation);
         }
 
         private void Border_PointerExited(object sender, PointerRoutedEventArgs e)
@@ -103,8 +99,8 @@ namespace OClubs.Components.GridViewItem
             Title.Scale = new System.Numerics.Vector3(1, 1, 0);
             BelowGrid.Translation = new System.Numerics.Vector3(0, 400, 0);
 
-            //Blur Animation (Very Buggy)
-            //await CoverImage.Blur(value: 0, duration: 700, delay: 0).StartAsync();
+            _springAnimation.FinalValue = 0f;
+            effectBrush.StartAnimation("Blur.BlurAmount", _springAnimation);
         }
 
 
@@ -150,6 +146,36 @@ namespace OClubs.Components.GridViewItem
             bindSizeAnimation.SetReferenceParameter("hostVisual", hostVisual);
 
             glassVisual.StartAnimation("Size", bindSizeAnimation);
+        }
+
+        private void Department_Loaded(object sender, RoutedEventArgs e)
+        {
+            effectVisual = compositor.CreateSpriteVisual();
+            var destinationBrush = compositor.CreateBackdropBrush();
+            //Create the Effect you want
+            var graphicsEffect = new GaussianBlurEffect
+            {
+                Name = "Blur",
+                BlurAmount = 0f,
+                BorderMode = EffectBorderMode.Hard,
+                Source = new CompositionEffectSourceParameter("Background")
+            };
+
+
+
+            effectFactory = compositor.CreateEffectFactory(graphicsEffect, new[] { "Blur.BlurAmount" });
+            effectBrush = effectFactory.CreateBrush();
+            effectBrush.SetSourceParameter("Background", destinationBrush);
+
+            effectVisual.Brush = effectBrush;
+            effectVisual.Size = new System.Numerics.Vector2(900, 400);
+
+            ElementCompositionPreview.SetElementChildVisual(CoverImage, effectVisual);
+
+            //Create Spring Animation for nature increase and decrease value
+            _springAnimation = compositor.CreateSpringScalarAnimation();
+            _springAnimation.Period = TimeSpan.FromSeconds(0.70);
+            //_springAnimation.DampingRatio = 0.25f;
         }
     }
 }

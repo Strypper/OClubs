@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:UserControl="using:OClubs.Components.GridViewItem"
     xmlns:data1="using:OClubs.Models.LocalData"
-    mc:Ignorable="d"
+    mc:Ignorable="d" Loaded="Page_Loaded"
     Background="LightGray">
 
     <ScrollViewer x:Name="MainScrollView">
@@ -19,17 +19,42 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <ParallaxView Source="{Binding ElementName=MainScrollView}"
-                              VerticalShift="-900">
+                              VerticalShift="-840">
                     <!--<MediaElement x:Name="BackgroundVideo" IsFullWindow="False"
                               Source="ms-appx:///Assets/LocalMedia/Videos/IUTrailer.mp4"
                               Stretch="UniformToFill" AutoPlay="True" IsMuted="True"/>-->
 
                     <FlipView x:Name="IUSlider">
-                        <Image Source="/Assets/FlipView/FlipView1.jpg" Stretch="UniformToFill" />
-                        <Image Source="/Assets/FlipView/FlipView2.jpg" Stretch="UniformToFill"  />
-                        <Image Source="/Assets/FlipView/FlipView3.jpg" Stretch="UniformToFill"  />
-                        <Image Source="/Assets/FlipView/FlipView4.jpg" Stretch="UniformToFill"  />
-                        <Image Source="/Assets/FlipView/FlipView5.jpg" Stretch="UniformToFill"  />
+                        <Image Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="/Assets/FlipView/FlipView1.jpg"
+                                             DecodePixelHeight="700"/>
+                            </Image.Source>
+                        </Image>
+                        <Image Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="/Assets/FlipView/FlipView2.jpg"
+                                             DecodePixelHeight="700"/>
+                            </Image.Source>
+                        </Image>
+                        <Image Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="/Assets/FlipView/FlipView3.jpg"
+                                             DecodePixelHeight="700"/>
+                            </Image.Source>
+                        </Image>
+                        <Image Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="/Assets/FlipView/FlipView4.jpg"
+                                             DecodePixelHeight="700"/>
+                            </Image.Source>
+                        </Image>
+                        <Image Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="/Assets/FlipView/FlipView5.jpg"
+                                             DecodePixelHeight="700"/>
+                            </Image.Source>
+                        </Image>
                     </FlipView>
                 </ParallaxView>
                 <TextBlock Text="Proud to be an IUer" FontSize="50" Foreground="#2e3191" FontWeight="Bold"
@@ -40,8 +65,12 @@
                               Width="200" Height="200" Background="Transparent"  
                               VerticalAlignment="Top" HorizontalAlignment="Center"
                               Margin="0,-100,0,0" CornerRadius="100">
-                    <Image Width="190" Height="190" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Source="ms-appx:///Assets/LocalMedia/Images/Logos/IU-Logo.png"/>
+                    <Image Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image.Source>
+                            <BitmapImage UriSource="ms-appx:///Assets/LocalMedia/Images/Logos/IU-Logo.png"
+                                         DecodePixelHeight="190" DecodePixelWidth="190"/>
+                        </Image.Source>
+                    </Image>
                 </ToggleButton>
                 <TextBlock Text="Join us" FontSize="50" Foreground="#2e3191" FontWeight="Bold"
                            VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5,5,400,5"/>
@@ -163,7 +192,7 @@
                 </Pivot>
             </Grid>
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Bottom" 
-                        Grid.Row="2">
+                   Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />

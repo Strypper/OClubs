@@ -24,42 +24,42 @@ namespace OClubs.Models.LocalData
             {
                 Name = "IT",
                 Detail = "blah blah blah",
-                ImgSource = "/Assets/LocalMedia/Images/Departments/IT.jpg" ,
+                ImgSource = "ms-appx:///Assets/LocalMedia/Images/Departments/IT.jpg",
                 Icon = "\uF0B9"
             });
             data.Add(new Department
             {
                 Name = "EE",
                 Detail = "blah blah blah",
-                ImgSource = "/Assets/LocalMedia/Images/Departments/EE.jpg",
+                ImgSource = "ms-appx:///Assets/LocalMedia/Images/Departments/EE.jpg",
                 Icon = "\uE950"
             });
             data.Add(new Department
             {
                 Name = "BT",
                 Detail = "blah blah blah",
-                ImgSource = "/Assets/LocalMedia/Images/Departments/BT.jpg",
+                ImgSource = "ms-appx:///Assets/LocalMedia/Images/Departments/BT.jpg",
                 Icon = "\uEE94"
             });
             data.Add(new Department
             {
                 Name = "BA",
                 Detail = "blah blah blah",
-                ImgSource = "/Assets/LocalMedia/Images/Departments/BA.jpg",
+                ImgSource = "ms-appx:///Assets/LocalMedia/Images/Departments/BA.jpg",
                 Icon = "\uEAFC"
             });
             data.Add(new Department
             {
                 Name = "ISE",
                 Detail = "blah blah blah",
-                ImgSource = "/Assets/LocalMedia/Images/Departments/ISE.jpg",
+                ImgSource = "ms-appx:///Assets/LocalMedia/Images/Departments/ISE.jpg",
                 Icon = "\uE115"
             });
             data.Add(new Department
             {
                 Name = "BME",
                 Detail = "blah blah blah",
-                ImgSource = "/Assets/LocalMedia/Images/Departments/BME.jpg",
+                ImgSource = "ms-appx:///Assets/LocalMedia/Images/Departments/BME.jpg",
                 Icon = "\uE95E"
             });
             return data;

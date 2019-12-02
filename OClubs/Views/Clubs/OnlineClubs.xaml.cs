@@ -24,14 +24,10 @@ namespace OClubs.Views.Clubs
     /// </summary>
     public sealed partial class OnlineClubs : Page
     {
-        List<ClubDataConcept> Clubs;
         public OnlineClubs()
         {
             this.InitializeComponent();
-            ((Storyboard)Resources["GradientAnimation"]).Begin();
-            //this.NavigationCacheMode = NavigationCacheMode.Enabled;
-            Clubs = TestData.GetData();
-            OClubs.ItemsSource = Clubs;
+            this.NavigationCacheMode = NavigationCacheMode.Enabled;
         }
 
         private void OClubs_ItemClick(object sender, ItemClickEventArgs e)
@@ -42,6 +38,7 @@ namespace OClubs.Views.Clubs
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            OClubs.ItemsSource = App.Clubs;
             Head.Translation = new System.Numerics.Vector3(0, 0, 0);
             OClubs.Translation = new System.Numerics.Vector3(0, 0, 0);
         }

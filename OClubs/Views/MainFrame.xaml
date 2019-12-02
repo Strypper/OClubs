@@ -5,11 +5,8 @@
     xmlns:local="using:OClubs.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d" Loaded="Page_Loaded">
     <Page.Resources>
-        <AcrylicBrush x:Key="BackgroundAcrylicBrush" BackgroundSource="HostBackdrop" TintColor="White" TintOpacity="0.2" FallbackColor="White"/>
-
         <LinearGradientBrush x:Key="DefaultColor" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#FDFC47" Offset="0.0" />
             <GradientStop Color="#24FE41" Offset="0.7" />
@@ -19,36 +16,49 @@
             <GradientStop Color="#DCE35B" Offset="0.0" />
             <GradientStop Color="#45B649" Offset="0.7" />
         </LinearGradientBrush>
-    </Page.Resources>
 
-    <Grid>
-        <NavigationView x:Name="MainFrameNavigation" Background="{ThemeResource SystemControlAcrylicElementBrush}"
-                        IsBackButtonVisible="Collapsed" SelectionChanged="MainFrameNavigation_SelectionChanged"
-                        PaneDisplayMode="LeftCompact">
-            <NavigationView.AutoSuggestBox>
-                <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
-            </NavigationView.AutoSuggestBox>
-            <NavigationView.MenuItems>
-                <NavigationViewItem x:Name="OnlineClubs" Icon="Flag" Content="Clubs"/>
-                <NavigationViewItem x:Name="Browse" Icon="World" Content="Online Skills"/>
-                <NavigationViewItemSeparator/>
-                <NavigationViewItemHeader Content="IU System"/>
-                <NavigationViewItem x:Name="IUServices" Icon="Edit" Content="IU-Services"/>
-                <NavigationViewItem x:Name="Shop" Icon="Shop" Content="IU-Sale"/>
-                <NavigationViewItem x:Name="MysteryIU" Icon="Contact2" Content="Mystery IUers"/>
-                <NavigationViewItem x:Name="BlackBoard" Icon="ViewAll" Content="BlackBoard"/>
-            </NavigationView.MenuItems>
-            <Frame x:Name="TheMainFrame" CornerRadius="15,0,0,0">
+        <ThemeShadow x:Name="BackgroundGridShadow"/>
+        <ThemeShadow x:Name="HeroImageShadow"/>
+
+    </Page.Resources>
+    <NavigationView x:Name="MainFrameNavigation" Padding="0,0,40,0"
+                        IsBackButtonVisible="Auto" SelectionChanged="MainFrameNavigation_SelectionChanged"
+                        PaneDisplayMode="Top">
+        <NavigationView.AutoSuggestBox>
+            <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find" Width="300"
+                                TextChanged="NavViewSearchBox_TextChanged"/>
+        </NavigationView.AutoSuggestBox>
+        <NavigationView.MenuItems>
+            <NavigationViewItem x:Name="OnlineClubs" Icon="Flag" Content="Clubs"/>
+            <NavigationViewItem x:Name="Browse" Icon="World" Content="Online Skills"/>
+            <NavigationViewItemSeparator/>
+            <NavigationViewItemHeader Content="IU System"/>
+            <NavigationViewItem x:Name="IUServices" Icon="Edit" Content="IU-Services"/>
+            <NavigationViewItem x:Name="Shop" Icon="Shop" Content="IU-Sale"/>
+            <NavigationViewItem x:Name="MysteryIU" Icon="Contact2" Content="Mystery IUers"/>
+            <NavigationViewItem x:Name="BlackBoard" Icon="ViewAll" Content="BlackBoard"/>
+        </NavigationView.MenuItems>
+
+        <Grid>
+            <Grid x:Name="BackgroundGrid" />
+            <Frame x:Name="TheMainFrame" Margin="15,15,15,0" 
+                       Shadow="{StaticResource BackgroundGridShadow}"
+                       Translation="0,0,0">
                 <Frame.ContentTransitions>
                     <TransitionCollection>
                         <NavigationThemeTransition/>
                     </TransitionCollection>
                 </Frame.ContentTransitions>
+
+                <Frame.TranslationTransition>
+                    <Vector3Transition Duration="0:0:2.5"/>
+                </Frame.TranslationTransition>
             </Frame>
-            <NavigationView.PaneFooter>
-                <NavigationViewItem x:Name="ClubManagement" Icon="Manage" Content="Club Management"
-                                    Background="{StaticResource DefaultColor}" Tapped="ClubManagement_Tapped"/>
-            </NavigationView.PaneFooter>
-        </NavigationView>
-    </Grid>
+        </Grid>
+
+        <NavigationView.PaneFooter>
+            <NavigationViewItem x:Name="ClubManagement" Icon="Manage" Content="Club Management"
+                                    Tapped="ClubManagement_Tapped"/>
+        </NavigationView.PaneFooter>
+    </NavigationView>
 </Page>

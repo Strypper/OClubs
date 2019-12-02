@@ -34,7 +34,6 @@
             <Rectangle x:Name="anotherHost" />
             <Pivot Name="mainPivot"
                    SelectionChanged="treePivot_SelectionChanged">
-                <!-->Notice how every Pivot Item is transparent. They need to be "Filled" with colour<-->
                 <PivotItem Name="firstPivotItem"
                            Background="Transparent"
                            Foreground="Black">

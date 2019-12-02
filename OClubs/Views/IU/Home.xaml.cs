@@ -1,24 +1,10 @@
-﻿using Microsoft.Toolkit.Uwp.UI.Animations.Expressions;
-using OClubs.Models.LocalData;
-using OClubs.Views.Clubs;
-using OClubs.Views.IU.About_Tab;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using OClubs.Views.IU.About_Tab;
 using Windows.ApplicationModel.Core;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Composition;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Hosting;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -33,10 +19,6 @@ namespace OClubs.Views.IU
         public Home()
         {
             this.InitializeComponent();
-            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-            coreTitleBar.ExtendViewIntoTitleBar = true;
-            this.NavigationCacheMode = NavigationCacheMode.Enabled;
-            AboutFrame.Navigate(typeof(ParentPage));
         }
 
         private void Sound_Checked(object sender, RoutedEventArgs e)
@@ -58,6 +40,7 @@ namespace OClubs.Views.IU
                     break;
                 case 1:
                     AboutFrame.Navigate(typeof(AboutParentPage));
+                    
                     break;
                 case 2:
                     break;
@@ -66,6 +49,10 @@ namespace OClubs.Views.IU
                 case 4:
                     break;
             }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

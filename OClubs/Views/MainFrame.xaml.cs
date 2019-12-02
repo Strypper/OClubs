@@ -10,6 +10,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,8 +32,7 @@ namespace OClubs.Views
         public MainFrame()
         {
             this.InitializeComponent();
-            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-            coreTitleBar.ExtendViewIntoTitleBar = true;
+
         }
 
         private void MainFrameNavigation_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
@@ -53,14 +54,17 @@ namespace OClubs.Views
             {
                 case "OnlineClubs":
                     TheMainFrame.Navigate(typeof(OnlineClubs));
+                    TheMainFrame.Translation = new System.Numerics.Vector3(0, 0, 250);
                     break;
                 case "Browse":
                     break;
                 case "IUServices":
                     TheMainFrame.Navigate(typeof(Home));
+                    TheMainFrame.Translation = new System.Numerics.Vector3(0, 0, 250);
                     break;
                 case "Shop":
                     TheMainFrame.Navigate(typeof(StoreView));
+                    TheMainFrame.Translation = new System.Numerics.Vector3(0, 300, 0);
                     break;
             }
         }
@@ -68,6 +72,19 @@ namespace OClubs.Views
         private void ClubManagement_Tapped(object sender, TappedRoutedEventArgs e)
         {
             TheMainFrame.Navigate(typeof(ClubDetail));
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            BackgroundGridShadow.Receivers.Add(BackgroundGrid);
+
+            OnlineClubs.IsSelected = true;
+        }
+
+        private void NavViewSearchBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            TheMainFrame.Translation = new System.Numerics.Vector3(0, 200, 0);
         }
     }
 }

@@ -25,6 +25,11 @@ namespace OClubs.Views.IU.About_Tab
         public AboutParentPage()
         {
             this.InitializeComponent();
+            this.NavigationCacheMode = NavigationCacheMode.Enabled;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

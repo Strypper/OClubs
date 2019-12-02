@@ -25,15 +25,12 @@ namespace OClubs.Views.IU.About_Tab
     /// </summary>
     public sealed partial class ParentPage : Page
     {
-        private List<Department> departments;
+        //private List<Department> departments;
         public ParentPage()
         {
             this.InitializeComponent();
-            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-            coreTitleBar.ExtendViewIntoTitleBar = true;
-            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
-            departments = DepartmentInfo.getInfo();
-            Departments.ItemsSource = departments;
+            //departments = DepartmentInfo.getInfo();
+            Departments.ItemsSource = App.department;
         }
     }
 }
