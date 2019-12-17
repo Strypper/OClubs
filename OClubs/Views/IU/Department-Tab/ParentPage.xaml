@@ -6,10 +6,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:UserControl="using:OClubs.Components.GridViewItem"
-    xmlns:data1="using:OClubs.Models.LocalData"
-    mc:Ignorable="d" x:Name="UI" Background="#2e3191">
+    xmlns:data1="using:OClubs.Models.LocalData" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d" x:Name="UI" Background="#fafafa">
 
-    <GridView x:Name="Departments" HorizontalAlignment="Center" Margin="0,19,0,0"
+    <controls:AdaptiveGridView  x:Name="Departments" HorizontalAlignment="Center" Margin="0,19,0,0"
               CanBeScrollAnchor="False" ScrollViewer.VerticalScrollMode="Disabled"
               ScrollViewer.IsVerticalRailEnabled="False" ScrollViewer.IsVerticalScrollChainingEnabled="False">
         <GridView.ItemContainerTransitions>
@@ -28,5 +28,29 @@
                                             DepartmentDescription="{x:Bind Detail, Mode=OneTime}"/>
             </DataTemplate>
         </GridView.ItemTemplate>
-    </GridView>
+    </controls:AdaptiveGridView>
+
+    <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <UserControl:DepartmentItem Margin="5,14,5,5" Grid.Row="0" Grid.Column="0"/>
+        <UserControl:DepartmentItem Margin="5" Grid.Row="1" Grid.Column="0"/>
+        <UserControl:DepartmentItem Margin="5" Grid.Row="2" Grid.Column="0"/>
+        <UserControl:DepartmentItem Margin="5" Grid.Row="3" Grid.Column="0"/>
+
+        <UserControl:DepartmentItem Margin="5,14,5,5" Grid.Row="0" Grid.Column="1"/>
+        <UserControl:DepartmentItem Margin="5" Grid.Row="1" Grid.Column="1"/>
+        <UserControl:DepartmentItem Margin="5" Grid.Row="2" Grid.Column="1"/>
+        <UserControl:DepartmentItem Margin="5" Grid.Row="3" Grid.Column="1"/>
+
+    </Grid>-->
+    
 </Page>

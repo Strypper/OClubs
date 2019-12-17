@@ -9,6 +9,10 @@
     d:DesignHeight="1000"
     d:DesignWidth="1000" FontFamily="Segoe UI">
 
+    <UserControl.Resources>
+        <AcrylicBrush x:Key="BackgroundAcrylicBrush" BackgroundSource="HostBackdrop" TintColor="White" TintOpacity="0.2" FallbackColor="White"/>
+    </UserControl.Resources>
+
     <Grid x:Name="Component"
           Width="575" Height="400" CornerRadius="10">
         <Grid.RowDefinitions>
@@ -24,7 +28,7 @@
                        Text="{x:Bind data.ClubName}"
                        Margin="175,5,5,5"></TextBlock>
         </Grid>
-        <Grid Grid.Row="1" Background="{ThemeResource SystemControlAltMediumLowAcrylicElementMediumBrush}">
+        <Grid Grid.Row="1" Background="{StaticResource BackgroundAcrylicBrush}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="170"/>
                 <ColumnDefinition Width="*"/>

@@ -6,9 +6,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:UserControl="using:OClubs.Components.GridViewItem"
-    xmlns:data1="using:OClubs.Models.LocalData"
-    mc:Ignorable="d" Loaded="Page_Loaded"
-    Background="LightGray">
+    xmlns:data1="using:OClubs.Models.LocalData" 
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls" 
+    xmlns:lottie="using:Microsoft.Toolkit.Uwp.UI.Lottie"
+    mc:Ignorable="d" Loaded="Page_Loaded" Background="#c9c9c0">
+    <Page.Resources>
+        <LinearGradientBrush x:Key="DefaultColor" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FDC830" Offset="0.0" />
+            <GradientStop Color="#F37335" Offset="0.7" />
+        </LinearGradientBrush>
+    </Page.Resources>
 
     <ScrollViewer x:Name="MainScrollView">
         <Grid>
@@ -57,23 +64,19 @@
                         </Image>
                     </FlipView>
                 </ParallaxView>
-                <TextBlock Text="Proud to be an IUer" FontSize="50" Foreground="#2e3191" FontWeight="Bold"
-                           VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="700,5,5,5"/>
+                <TextBlock Text="LET US GUIDE YOU" FontSize="40" Foreground="{StaticResource DefaultColor}" FontWeight="Bold"
+                           VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="600,5,5,5"/>
             </Grid>
             <Grid Grid.Row="1" Margin="5">
-                <ToggleButton x:Name="Sound" Checked="Sound_Checked" Unchecked="Sound_Unchecked"
-                              Width="200" Height="200" Background="Transparent"  
-                              VerticalAlignment="Top" HorizontalAlignment="Center"
-                              Margin="0,-100,0,0" CornerRadius="100">
-                    <Image Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Image.Source>
-                            <BitmapImage UriSource="ms-appx:///Assets/LocalMedia/Images/Logos/IU-Logo.png"
-                                         DecodePixelHeight="190" DecodePixelWidth="190"/>
-                        </Image.Source>
-                    </Image>
-                </ToggleButton>
-                <TextBlock Text="Join us" FontSize="50" Foreground="#2e3191" FontWeight="Bold"
-                           VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5,5,400,5"/>
+                <controls:AnimatedVisualPlayer x:Name="LottiePlayer1"
+                                       Width="200" Height="200" PlaybackRate="1"                            
+                                       VerticalAlignment="Top" HorizontalAlignment="Center"
+                                       Margin="0,-100,0,0">
+                    <lottie:LottieVisualSource x:Name="LottieJsonSource1"
+                                       UriSource="ms-appx:///Assets/LocalMedia/Lottie/Vision.json"/>
+                </controls:AnimatedVisualPlayer>
+                <TextBlock Text="LIGHT YOUR FUTURE" FontSize="40" Foreground="{StaticResource DefaultColor}" FontWeight="Bold"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5,5,550,5"/>
 
                 
                 
@@ -82,17 +85,17 @@
                 <Pivot x:Name="HomePivot" SelectionChanged="HomePivot_SelectionChanged" Margin="0,100,0,0">
                     <Pivot.RightHeader>
                         <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right">
-                            <AppBarButton Icon="Map" Label="Locations" FontWeight="ExtraBold" Foreground="#2e3191"/>
-                            <AppBarButton Icon="Mail" Label="Mail" FontWeight="ExtraBold" Foreground="#2e3191"/>
-                            <AppBarButton Icon="Phone" Label="Contact" FontWeight="ExtraBold" Foreground="#2e3191"/>
+                            <AppBarButton Icon="Map" Label="Locations" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"/>
+                            <AppBarButton Icon="Mail" Label="Mail" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"/>
+                             <AppBarButton Icon="Phone" Label="Contact" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"/>
                         </CommandBar>
                     </Pivot.RightHeader>
                     <PivotItem x:Name="DepartmentTab" Tag="AboutTab">
                         <PivotItem.Header>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="&#xECAA;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="&#xECAA;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock Text="Departments" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="Departments" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </PivotItem.Header>
@@ -107,9 +110,9 @@
                     <PivotItem x:Name="AboutTab" Tag="AboutTab">
                         <PivotItem.Header>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="&#xE783;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="&#xE783;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock Text="About" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="About" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </PivotItem.Header>
@@ -124,9 +127,9 @@
                     <PivotItem x:Name="IUClubsTab">
                         <PivotItem.Header>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="&#xE7C1;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="&#xE7C1;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock Text="IU-Clubs" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="IU-Clubs" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </PivotItem.Header>
@@ -141,9 +144,9 @@
                     <PivotItem x:Name="NewsTab">
                         <PivotItem.Header>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="&#xE8A1;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191" 
+                                <TextBlock Text="&#xE8A1;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}" 
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock Text="News" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="News" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </PivotItem.Header>
@@ -158,9 +161,9 @@
                     <PivotItem x:Name="QnATab">
                         <PivotItem.Header>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="&#xE9CE;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="&#xE9CE;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock Text="Q &amp; A" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="Q &amp; A" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </PivotItem.Header>
@@ -175,9 +178,9 @@
                     <PivotItem x:Name="PrinciplesTab">
                         <PivotItem.Header>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="&#xE716;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="#2e3191" 
+                                <TextBlock Text="&#xE716;" FontFamily="Segoe MDL2 Assets" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}" 
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <TextBlock Text="Principles" FontWeight="ExtraBold" Foreground="#2e3191"
+                                <TextBlock Text="Principles" FontWeight="ExtraBold" Foreground="{StaticResource DefaultColor}"
                                Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </PivotItem.Header>

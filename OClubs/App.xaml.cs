@@ -1,5 +1,8 @@
 ﻿using OClubs.Models.Club;
 using OClubs.Models.LocalData;
+using OClubs.Views;
+using OClubs.Views.Clubs;
+using OClubs.Views.IU;
 using System;
 using System.Collections.Generic;
 using Windows.ApplicationModel;

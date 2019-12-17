@@ -9,7 +9,7 @@
     xmlns:data="using:OClubs.Models.Club"
     xmlns:local1="using:OClubs.Components.Buttons"
     mc:Ignorable="d" Loaded="Page_Loaded"
-    Background="#fffdfd">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
     <Page.Resources>
@@ -22,13 +22,12 @@
             <RowDefinition Height="300"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="Head" Orientation="Horizontal" Translation="1000,0,0"
+        <Grid   Background="{StaticResource BackgroundAcrylicBrush}">
+            <StackPanel x:Name="Head" Orientation="Horizontal" Translation="1000,0,0"
                     HorizontalAlignment="Center">
                 <StackPanel.TranslationTransition>
                     <Vector3Transition Duration="0:0:02"/>
                 </StackPanel.TranslationTransition>
-                <!--<local1:OClubsAction IconLogo="&#xE81B;" AColor="#7134bf"
-                                     AName="CREATE YOUR OWN CLUB" AFontFamily="Segoe MDL2 Assets"/>-->
                 <local1:OClubsAction IconLogo="&#xE716;" AColor="#ffa40b"
                                      AName="FIND YOUR PARTNERS" AFontFamily="Segoe MDL2 Assets"/>
                 <local1:OClubsAction IconLogo="&#xEBD2;" AColor="#edabc7"
@@ -37,16 +36,15 @@
                                      AName="COMPETITIONS" AFontFamily="Segoe UI Symbol"/>
                 <local1:OClubsAction IconLogo="&#x1F378;" AColor="#ffecc4"
                                      AName="EVENTS" AFontFamily="Segoe UI Symbol"/>
-        </StackPanel>
-        <Grid Grid.Row="1" Background="{StaticResource BackgroundAcrylicBrush}">
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1300"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
         <GridView x:Name="OClubs" Grid.Column="0" IsItemClickEnabled="True"
-                      ItemClick="OClubs_ItemClick" Translation="0,1000,0"
-                      ScrollViewer.IsVerticalScrollChainingEnabled="False"
-                      ScrollViewer.VerticalScrollMode="Disabled">
+                  ItemClick="OClubs_ItemClick" Translation="0,1000,0">
                 <GridView.TranslationTransition>
                     <Vector3Transition Duration="0:0:02"/>
                 </GridView.TranslationTransition>

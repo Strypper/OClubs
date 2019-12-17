@@ -8,8 +8,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/BubbleButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <AcrylicBrush x:Key="NavigationViewDefaultPaneBackground"
-              BackgroundSource="Backdrop" TintColor="Blue" TintOpacity=".6"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -76,15 +77,34 @@ namespace OClubs.Views
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            RequestedTheme = ElementTheme.Light;
+            MainFramePage.Background = new SolidColorBrush(Color.FromArgb(100, 255, 255, 224));
+            //BackgroundGridShadow.Receivers.Add(BackgroundGrid);
 
-            BackgroundGridShadow.Receivers.Add(BackgroundGrid);
-
-            OnlineClubs.IsSelected = true;
+            //OnlineClubs.IsSelected = true;
         }
 
         private void NavViewSearchBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
             TheMainFrame.Translation = new System.Numerics.Vector3(0, 200, 0);
+        }
+
+        private void Mode_Toggled(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toggleSwitch = sender as ToggleSwitch;
+            if (toggleSwitch != null)
+            {
+                if (toggleSwitch.IsOn == true)
+                {
+                    RequestedTheme = ElementTheme.Dark;
+                    MainFramePage.Background = new SolidColorBrush(Color.FromArgb(100, 62, 62, 66));
+                }
+                else
+                {
+                    RequestedTheme = ElementTheme.Light;
+                    MainFramePage.Background = new SolidColorBrush(Color.FromArgb(100, 255, 255, 224));
+                }
+            }
         }
     }
 }

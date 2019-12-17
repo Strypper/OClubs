@@ -81,7 +81,7 @@ namespace OClubs.Components.GridViewItem
         public DepartmentItem()
         {
             this.InitializeComponent();
-            //InitializeFrostedGlass(Glass);
+            InitializeFrostedGlass(Glass);
         }
 
 
@@ -158,6 +158,7 @@ namespace OClubs.Components.GridViewItem
                 Name = "Blur",
                 BlurAmount = 0f,
                 BorderMode = EffectBorderMode.Hard,
+                Optimization = EffectOptimization.Balanced,
                 Source = new CompositionEffectSourceParameter("Background")
             };
 

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="OClubs.Views.MainFrame"
+    x:Class="OClubs.Views.MainFrame" x:Name="MainFramePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:OClubs.Views"
@@ -19,29 +19,44 @@
 
         <ThemeShadow x:Name="BackgroundGridShadow"/>
         <ThemeShadow x:Name="HeroImageShadow"/>
-
     </Page.Resources>
-    <NavigationView x:Name="MainFrameNavigation" Padding="0,0,40,0"
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <NavigationView x:Name="MainFrameNavigation" VerticalAlignment="Top"
                         IsBackButtonVisible="Auto" SelectionChanged="MainFrameNavigation_SelectionChanged"
                         PaneDisplayMode="Top">
-        <NavigationView.AutoSuggestBox>
-            <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find" Width="300"
-                                TextChanged="NavViewSearchBox_TextChanged"/>
-        </NavigationView.AutoSuggestBox>
-        <NavigationView.MenuItems>
-            <NavigationViewItem x:Name="OnlineClubs" Icon="Flag" Content="Clubs"/>
-            <NavigationViewItem x:Name="Browse" Icon="World" Content="Online Skills"/>
-            <NavigationViewItemSeparator/>
-            <NavigationViewItemHeader Content="IU System"/>
-            <NavigationViewItem x:Name="IUServices" Icon="Edit" Content="IU-Services"/>
-            <NavigationViewItem x:Name="Shop" Icon="Shop" Content="IU-Sale"/>
-            <NavigationViewItem x:Name="MysteryIU" Icon="Contact2" Content="Mystery IUers"/>
-            <NavigationViewItem x:Name="BlackBoard" Icon="ViewAll" Content="BlackBoard"/>
-        </NavigationView.MenuItems>
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find" Width="300"
+                                TextChanged="NavViewSearchBox_TextChanged"
+                                PlaceholderText="Search your stuffs"/>
+            </NavigationView.AutoSuggestBox>
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Name="OnlineClubs" Icon="Flag" Content="Clubs"/>
+                <NavigationViewItem x:Name="Browse" Icon="World" Content="Online Skills"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="Vision System"/>
+                <NavigationViewItem x:Name="IUServices" Icon="Edit" Content="Learning Courses"/>
+                <NavigationViewItem x:Name="Shop" Icon="Shop" Content="IU-Sale"/>
+                <NavigationViewItem x:Name="MysteryIU" Icon="Contact2" Content="Members"/>
+                <NavigationViewItem x:Name="BlackBoard" Icon="ViewAll" Content="Missions"/>
+            </NavigationView.MenuItems>
 
-        <Grid>
-            <Grid x:Name="BackgroundGrid" />
-            <Frame x:Name="TheMainFrame" Margin="15,15,15,0" 
+            <NavigationView.PaneFooter>
+                <StackPanel Orientation="Horizontal">
+                    <NavigationViewItem x:Name="ClubManagement" Icon="Manage" Content="Club Management"
+                                    Tapped="ClubManagement_Tapped"/>
+                    <ToggleSwitch x:Name="Mode" Margin="15,0,0,0" Padding="0" 
+                              Width="88" OffContent="Light" OnContent="Dark"
+                              Toggled="Mode_Toggled"/>
+                </StackPanel>
+            </NavigationView.PaneFooter>
+        </NavigationView>
+        <ScrollViewer Grid.Row="1">
+            <Frame x:Name="TheMainFrame" 
                        Shadow="{StaticResource BackgroundGridShadow}"
                        Translation="0,0,0">
                 <Frame.ContentTransitions>
@@ -54,11 +69,6 @@
                     <Vector3Transition Duration="0:0:2.5"/>
                 </Frame.TranslationTransition>
             </Frame>
-        </Grid>
-
-        <NavigationView.PaneFooter>
-            <NavigationViewItem x:Name="ClubManagement" Icon="Manage" Content="Club Management"
-                                    Tapped="ClubManagement_Tapped"/>
-        </NavigationView.PaneFooter>
-    </NavigationView>
+        </ScrollViewer>
+    </Grid>
 </Page>

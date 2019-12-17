@@ -6,25 +6,26 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors" xmlns:controls="using:Microsoft.UI.Xaml.Controls" xmlns:lottie="using:Microsoft.Toolkit.Uwp.UI.Lottie"
     mc:Ignorable="d" Name="Department" Loaded="Department_Loaded">
 
-    <Grid     x:Name="Component"
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="DefaultColor" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FDC830" Offset="0.0" />
+            <GradientStop Color="#F37335" Offset="0.7" />
+        </LinearGradientBrush>
+    </UserControl.Resources>
+
+    <Grid     x:Name="Component" CornerRadius="5"
               VerticalAlignment="Center" HorizontalAlignment="Center" 
-              Width="900" Height="400" CornerRadius="5"
+              Width="900" Height="400"
               PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited">
         <Image x:Name="CoverImage" Source="{Binding DepartmentImageSource, Mode=OneTime, ElementName=Department}" 
                    Width="900" Height="400" Stretch="UniformToFill"/>
-        <!--<Image x:Name="CoverImage" Stretch="UniformToFill">
-            <Image.Source>
-                <BitmapImage DecodePixelWidth="900" DecodePixelHeight="400"
-                             UriSource="{Binding DepartmentImageSource, Mode=OneTime, ElementName=Department}"/>
-            </Image.Source>
-        </Image>-->
         <TextBlock x:Name="Title"
                     VerticalAlignment="Top" HorizontalAlignment="Left"
                     Margin="5" Scale="1,1,0" 
-                    FontSize="100" Foreground="#2e3191" FontWeight="ExtraBold">
+                    FontSize="100" Foreground="{StaticResource DefaultColor}" FontWeight="ExtraBold">
             <Run  Text = "{x:Bind DepartmentLogo, Mode=OneWay}" FontFamily="Segoe MDL2 Assets"/>
             <Run Text = "{x:Bind DepartmentTitle, Mode=OneWay}"/>
             <TextBlock.ScaleTransition>
@@ -35,7 +36,7 @@
             <Grid.TranslationTransition>
                 <Vector3Transition Duration="0:0:1"/>
             </Grid.TranslationTransition>
-            <!--<Rectangle x:Name="Glass" Width="900" Height="400"/>-->
+            <Rectangle x:Name="Glass" Width="900" Height="400"/>
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" 
                             Orientation="Horizontal">
                 <Border Width="100" Height="100" Margin="5"
@@ -79,7 +80,7 @@
                 </Border>
             </StackPanel>
             <TextBlock x:Name="Description" Margin="5"
-                       Foreground="#2e3191" TextAlignment="Right" TextWrapping="Wrap" 
+                       Foreground="{StaticResource DefaultColor}" TextAlignment="Right" TextWrapping="Wrap" 
                        VerticalAlignment="Center" HorizontalAlignment="Center"
                        Text="{x:Bind DepartmentDescription, Mode=OneWay}">
             </TextBlock>
@@ -127,4 +128,117 @@
             </StackPanel>
         </Grid>
     </Grid>
+
+
+    <!--<Grid     x:Name="Component" CornerRadius="5"
+              VerticalAlignment="Center" HorizontalAlignment="Center" 
+              Width="900" Height="400"
+              PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited">
+        <Image x:Name="CoverImage" Source="/Assets/FlipView/FlipView1.jpg" 
+                   Width="900" Height="400" Stretch="UniformToFill"/>
+        <TextBlock x:Name="Title"
+                    VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Margin="5" Scale="1,1,0" 
+                    FontSize="100" Foreground="{StaticResource DefaultColor}" FontWeight="ExtraBold">
+            <Run Text = "Icon" FontFamily="Segoe MDL2 Assets"/>
+            <Run Text = "IT"/>
+            <TextBlock.ScaleTransition>
+                <Vector3Transition Duration="0:0:1"/>
+            </TextBlock.ScaleTransition>
+        </TextBlock>
+        <Grid x:Name="BelowGrid" Translation="0,400,0" Width="900" Height="400">
+            <Grid.TranslationTransition>
+                <Vector3Transition Duration="0:0:1"/>
+            </Grid.TranslationTransition>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" 
+                            Orientation="Horizontal">
+                <Border Width="100" Height="100" Margin="5"
+                        CornerRadius="100">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#FDFC47" Offset="0.0" />
+                            <GradientStop Color="#24FE41" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE125;" FontSize="30" />
+                        <TextBlock Text=""/>
+                    </StackPanel>
+                </Border>
+                <Border Width="100" Height="100" Margin="55,5,55,5"
+                        CornerRadius="100">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#fe8c00" Offset="0.0" />
+                            <GradientStop Color="#f83600" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7BE;" FontSize="30" Margin="5"/>
+                        <TextBlock Text=""/>
+                    </StackPanel>
+                </Border>
+                <Border Width="100" Height="100" Margin="5"
+                        CornerRadius="100">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#B3FFAB" Offset="0.0" />
+                            <GradientStop Color="#12FFF7" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE81B;" FontSize="30" />
+                        <TextBlock Text=""/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <TextBlock x:Name="Description" Margin="5"
+                       Foreground="{StaticResource DefaultColor}" TextAlignment="Right" TextWrapping="Wrap" 
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="LOL">
+            </TextBlock>
+            <StackPanel VerticalAlignment="Bottom"
+                        HorizontalAlignment="Stretch" Height="90" Orientation="Horizontal">
+                <Button Width="285" Height="80" Margin="12,5,5,5" 
+                        VerticalAlignment="Center" CornerRadius="6">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#FDFC47" Offset="0.0" />
+                            <GradientStop Color="#24FE41" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <TextBlock FontSize="20">
+                            <Run Text="&#xE717;" FontFamily="Segoe MDL2 Assets"/>
+                            <Run Text="Phone Number" FontWeight="Bold"/>
+                    </TextBlock>
+                </Button>
+                <Button Width="285" Height="80" Margin="5" 
+                        VerticalAlignment="Center" CornerRadius="5">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#fe8c00" Offset="0.0" />
+                            <GradientStop Color="#f83600" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <TextBlock FontSize="20">
+                            <Run Text="&#xE956;" FontFamily="Segoe MDL2 Assets"/>
+                            <Run Text="Fax" FontWeight="Bold"/>
+                    </TextBlock>
+                </Button>
+                <Button Width="285" Height="80" Margin="5" 
+                        VerticalAlignment="Center" CornerRadius="5">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#B3FFAB" Offset="0.0" />
+                            <GradientStop Color="#12FFF7" Offset="0.7" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <TextBlock FontSize="20">
+                            <Run Text="&#xE715;" FontFamily="Segoe MDL2 Assets"/>
+                            <Run Text="Mail" FontWeight="Bold"/>
+                    </TextBlock>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>-->
 </UserControl>
