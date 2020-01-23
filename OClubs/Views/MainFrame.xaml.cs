@@ -33,7 +33,7 @@ namespace OClubs.Views
         public MainFrame()
         {
             this.InitializeComponent();
-
+            TheMainFrame.Navigate(typeof(Home));
         }
 
         private void MainFrameNavigation_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
@@ -66,6 +66,9 @@ namespace OClubs.Views
                 case "Shop":
                     TheMainFrame.Navigate(typeof(StoreView));
                     TheMainFrame.Translation = new System.Numerics.Vector3(0, 300, 0);
+                    break;
+                default:
+                    TheMainFrame.Navigate(typeof(Home));
                     break;
             }
         }

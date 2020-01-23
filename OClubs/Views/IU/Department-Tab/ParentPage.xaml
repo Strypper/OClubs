@@ -30,27 +30,4 @@
         </GridView.ItemTemplate>
     </controls:AdaptiveGridView>
 
-    <!--<Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <UserControl:DepartmentItem Margin="5,14,5,5" Grid.Row="0" Grid.Column="0"/>
-        <UserControl:DepartmentItem Margin="5" Grid.Row="1" Grid.Column="0"/>
-        <UserControl:DepartmentItem Margin="5" Grid.Row="2" Grid.Column="0"/>
-        <UserControl:DepartmentItem Margin="5" Grid.Row="3" Grid.Column="0"/>
-
-        <UserControl:DepartmentItem Margin="5,14,5,5" Grid.Row="0" Grid.Column="1"/>
-        <UserControl:DepartmentItem Margin="5" Grid.Row="1" Grid.Column="1"/>
-        <UserControl:DepartmentItem Margin="5" Grid.Row="2" Grid.Column="1"/>
-        <UserControl:DepartmentItem Margin="5" Grid.Row="3" Grid.Column="1"/>
-
-    </Grid>-->
-    
 </Page>

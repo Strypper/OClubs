@@ -81,7 +81,7 @@ namespace OClubs.Components.GridViewItem
         public DepartmentItem()
         {
             this.InitializeComponent();
-            InitializeFrostedGlass(Glass);
+            //InitializeFrostedGlass(Glass);
         }
 
 
